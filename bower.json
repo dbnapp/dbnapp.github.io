@@ -1,0 +1,22 @@
+{
+  "name": "dbnapp.github.io",
+  "homepage": "dbnapp.github.io",
+  "authors": [
+    "Daryl Napp <dbnapp@gmail.com>"
+  ],
+  "description": "It's my site",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.5"
+  }
+}

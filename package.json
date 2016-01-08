@@ -1,0 +1,25 @@
+{
+  "name": "dbnapp.github.io",
+  "version": "1.0.0",
+  "description": "It's my site",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbnapp/dbnapp.github.io.git"
+  },
+  "author": "Daryl Napp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbnapp/dbnapp.github.io/issues"
+  },
+  "homepage": "https://github.com/dbnapp/dbnapp.github.io#readme"
+}
