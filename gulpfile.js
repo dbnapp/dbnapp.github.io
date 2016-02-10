@@ -3,6 +3,13 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync').create();
 
+gulp.task('skeleton-sass', function(){
+    gulp.src('./bower_components/Skeleton-Sass/scss/skeleton.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./css'))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('sass', function() {
     gulp.src('./sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -11,7 +18,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('sass:watch', function() {
-    gulp.watch('./sass/**/*.scss', ['sass']);
+    gulp.watch('./sass/**/*.scss', ['sass', 'skeleton-sass']);
 });
 
 gulp.task('serve', ['sass:watch'], function() {
