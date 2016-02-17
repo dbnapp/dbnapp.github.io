@@ -18,7 +18,8 @@ gulp.task('sass', function() {
 });
 
 gulp.task('sass:watch', function() {
-    gulp.watch('./sass/**/*.scss', ['sass', 'skeleton-sass']);
+    gulp.watch('./sass/**/*.scss', ['sass']);
+    gulp.watch('./bower_components/Skeleton-Sass/scss/skeleton.scss', ['sass', 'skeleton-sass']);
 });
 
 gulp.task('serve', ['sass:watch'], function() {
