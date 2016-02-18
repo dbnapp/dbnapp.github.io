@@ -2,12 +2,26 @@ html body{
     font-family: 'Catamaran', sans-serif;
 }
 
+input[type=radio]{
+    display:none;
+}
+
+.header{
+    padding: 1em 0 0 0;
+}
+
 .nav-list{
     li{
         display:inline-block;
         padding: 0.5rem;
         list-style: none;
         position:relative;
+
+        &:hover{
+            cursor:hand;
+            background-color: black;
+            color:white;
+        }
     }
 }
 
