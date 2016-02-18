@@ -3,26 +3,39 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync').create();
 
-gulp.task('skeleton-sass', function(){
+
+// SASS TASKS
+gulp.task('skeleton-sass', compileSkeleton);
+gulp.task('sass', compileSass);
+gulp.task('sass:watch', watchSassAndSkeleton);
+
+
+// OTHER TASKS
+gulp.task('serve', ['sass:watch'], startServer);
+gulp.task('default', ['serve']);
+
+
+// FUNCTIONS
+function compileSkeleton() {
     gulp.src('./bower_components/Skeleton-Sass/scss/skeleton.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.stream());
-});
+}
 
-gulp.task('sass', function() {
+function compileSass() {
     gulp.src('./sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.stream());
-});
+}
 
-gulp.task('sass:watch', function() {
+function watchSassAndSkeleton() {
     gulp.watch('./sass/**/*.scss', ['sass']);
     gulp.watch('./bower_components/Skeleton-Sass/scss/skeleton.scss', ['sass', 'skeleton-sass']);
-});
+}
 
-gulp.task('serve', ['sass:watch'], function() {
+function startServer() {
 
     browserSync.init({
         server: {
@@ -31,7 +44,4 @@ gulp.task('serve', ['sass:watch'], function() {
     });
 
     gulp.watch('*.html').on('change', browserSync.reload);
-});
-
-
-gulp.task('default', ['serve']);
+}
