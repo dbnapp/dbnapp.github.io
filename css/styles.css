@@ -2,10 +2,10 @@ html body {
   font-family: 'Catamaran', sans-serif; }
 
 .nav-list li {
-  list-style: none;
-  position: relative;
   display: inline-block;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  list-style: none;
+  position: relative; }
 
 p {
   margin: 2rem; }
