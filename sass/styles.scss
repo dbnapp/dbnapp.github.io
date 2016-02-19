@@ -28,3 +28,42 @@ input[type=radio]{
 p{
     margin: 2rem;
 }
+
+.pages{
+    .page{
+        display:none;
+    }
+}
+
+#page-1:checked ~ .container{
+    .page:nth-child(1){
+        display:block;
+        animation: fade-in 1s;
+    }
+}
+
+#page-2:checked ~ .container{
+    .page:nth-child(2){
+        display:block;
+        animation: fade-in 1s;
+    }
+}
+
+#page-3:checked ~ .container{
+    .page:nth-child(3){
+        display:block;
+        animation: fade-in 1s;
+    }
+}
+
+#page-4:checked ~ .container{
+    .page:nth-child(4){
+        display:block;
+        animation: fade-in 1s;
+    }
+}
+
+@keyframes fade-in{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}

@@ -10,10 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<input id="page-one" name="page" type="radio" checked>
-	<input id="page-two" name="page" type="radio">
-	<input id="page-three" name="page" type="radio">
+
+	<!-- Page Control -->
+	<input id="page-1" name="page" type="radio" checked>
+	<input id="page-2" name="page" type="radio">
+	<input id="page-3" name="page" type="radio">
+	<input id="page-4" name="page" type="radio">
 	
+	<!-- Header and Nav -->
 	<div class="container">
 		<div class="row header">
 			<div class="twelve columns">
@@ -23,43 +27,70 @@
 		<nav>
 			<ul class="nav-list">
 				<li class="nav-item">
-					<label for="page-one">
+					<label for="page-1">
 						<h4>About</h4>
 					</label>
 				</li>
 				<li class="nav-item">
-					<label for="page-two">
+					<label for="page-2">
 						<h4>Status</h4>
 					</label>
 				</li>
 				<li class="nav-item">
-					<label for="page-three">
+					<label for="page-3">
 							<h4>Projects</h4>
+					</label>
+				</li>
+				<li class="nav-item">
+					<label for="page-4">
+							<h4>Contact</h4>
 					</label>
 				</li>
 			</ul>
 		</nav>
-		<div class="row">
-			<section class="eight columns">
-				<h5>Hey,</h5>
-				<p>I'm a guy who's all about havin' <strong>fun</strong> and keepin' it <em>real</em>. I also like to mess around with programming languages and make things that are also <strong>fun</strong> and <em>real</em>. When not programming, I can be seen surfing along the California coastline or skiing the slopes of the Swiss Alps.</p>
-				<p>... Ok, ok, surfing the internet.</p>
-				<p>... and playing video games... I've never been skiing.</p>
-				<p>I live in an apartment in New Jersey with my girlfriend and we have two bunnies. Please enjoy my site.</p>
-			</section>	
+		
+		<!-- Pages -->
+		<div class="pages">
+
+			<!-- Page 1 -->
+			<div class="row page">
+				<section class="eight columns">
+					<h5>Hey,</h5>
+					<p>I'm a guy who's all about havin' <strong>fun</strong> and keepin' it <em>real</em>. I also like to mess around with programming languages and make things that are also <strong>fun</strong> and <em>real</em>. When not programming, I can be seen surfing along the California coastline or skiing the slopes of the Swiss Alps.</p>
+					<p>... Ok, ok, surfing the internet.</p>
+					<p>... and playing video games... I've never been skiing.</p>
+					<p>I live in an apartment in New Jersey with my girlfriend and we have two bunnies. Please enjoy my site.</p>
+				</section>	
+			</div>
+
+			<!-- Page 2 -->
+			<div class="row page">
+				<section class="eight columns">
+					<h5>Currently,</h5>
+					<p>I work at NIKSUN. At this time, I'm unsure of what details I'm allowed to reveal. So this section is intentionally left blank. Sorry about that :(</p>
+				</section>	
+			</div>
+
+			<!-- Page 3 -->
+			<div class="row page">
+				<section class="eight columns">
+					<h5>Lately,</h5>
+					<p>I've been sharpening my web dev skills. I'll try to keep this section up to date manually (unless I decide to make this site a little more interesting), but for the most up to date information you're probably better off checking my <a href="https://github.com/dbnapp/" target="_blank">github</a>.</p>
+				</section>	
+			</div>
+
+			<!-- Page 4 -->
+			<div class="row page">
+				<section class="eight columns">
+					<h5>Let's talk,</h5>
+					<address>
+						<a href="mailto:dbnapp@gmail.com">dbnapp@gmail.com</a>
+					</address>
+				</section>	
+			</div>
 		</div>
-		<div class="row">
-			<section class="eight columns">
-				<h5>Currently,</h5>
-				<p>I work at NIKSUN. At this time, I'm unsure of what details I'm allowed to reveal. So this section is intentionally left blank. Sorry about that :(</p>
-			</section>	
-		</div>
-		<div class="row">
-			<section class="eight columns">
-				<h5>Lately,</h5>
-				<p>I've been sharpening my web dev skills. I'll try to keep this section up to date manually (unless I decide to make this site a little more interesting), but for the most up to date information you're probably better off checking my <a href="https://github.com/dbnapp/" target="_blank">github</a>.</p>
-			</section>	
-		</div>
+		<!-- end pages -->
+
 	</div>
 </body>
 </html>
