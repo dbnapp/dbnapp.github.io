@@ -19,6 +19,7 @@ input[type=radio] {
         label {
             padding: 0.5em;
             border-radius: 5em;
+            transition: background-color 0.3s, color 1s;
 
             &:hover {
                 background-color: black;
@@ -28,11 +29,6 @@ input[type=radio] {
 
         h4 {
             margin: 0;
-        }
-
-        &:first-child {
-            // padding-left: 0;
-       
         }
     }
 }
