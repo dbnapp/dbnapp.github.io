@@ -5,37 +5,55 @@ input[type=radio] {
   display: none; }
 
 .header {
-  padding: 1em 0 0 0; }
+  padding: 1rem 0 0 0.5em; }
 
 .nav-list li {
   display: inline-block;
-  padding: 0.5rem;
   list-style: none;
   position: relative; }
-  .nav-list li:first-child {
-    padding-left: 0; }
-  .nav-list li:hover {
-    cursor: hand;
-    background-color: black;
-    color: white; }
+  .nav-list li label {
+    padding: 0.5em;
+    border-radius: 5em; }
+    .nav-list li label:hover {
+      background-color: black;
+      color: white; }
+  .nav-list li h4 {
+    margin: 0; }
 
 p {
-  margin: 2rem; }
+  margin: 1.5em; }
 
 .pages .page {
-  display: none; }
+  display: none;
+  padding: 0 0 0 0.5em; }
+
+#page-1:checked ~ .container label[for="page-1"] {
+  background-color: black;
+  color: white; }
 
 #page-1:checked ~ .container .page:nth-child(1) {
   display: block;
   animation: fade-in 1s; }
 
+#page-2:checked ~ .container label[for="page-2"] {
+  background-color: black;
+  color: white; }
+
 #page-2:checked ~ .container .page:nth-child(2) {
   display: block;
   animation: fade-in 1s; }
 
+#page-3:checked ~ .container label[for="page-3"] {
+  background-color: black;
+  color: white; }
+
 #page-3:checked ~ .container .page:nth-child(3) {
   display: block;
   animation: fade-in 1s; }
+
+#page-4:checked ~ .container label[for="page-4"] {
+  background-color: black;
+  color: white; }
 
 #page-4:checked ~ .container .page:nth-child(4) {
   display: block;
@@ -44,7 +62,7 @@ p {
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translate(5rem); }
+    transform: translate(5em); }
   to {
     opacity: 1;
     transform: translate(0); } }
