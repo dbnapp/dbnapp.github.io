@@ -1,101 +1,109 @@
-html body{
+html body {
     font-family: 'Catamaran', sans-serif;
 }
 
-input[type=radio]{
-    display:none;
+input[type=radio] {
+    display: none;
 }
 
-.header{
+.header {
     padding: 1rem 0 0 0.5em;
 }
 
-.nav-list{
-    li{
-        display:inline-block;
+.nav-list {
+    li {
+        display: inline-block;
         list-style: none;
-        position:relative;
+        position: relative;
 
-        label{
+        label {
             padding: 0.5em;
             border-radius: 5em;
-            
+
             &:hover {
                 background-color: black;
-                color:white;
+                color: white;
             }
         }
 
-        h4{
+        h4 {
             margin: 0;
         }
 
-        &:first-child{
+        &:first-child {
             // padding-left: 0;
+       
         }
-
-        
     }
 }
 
-p{
+p {
     margin: 1.5em;
 }
 
-.pages{
-    .page{
-        display:none;
+.pages {
+    .page {
+        display: none;
         padding: 0 0 0 0.5em;
     }
 }
 
-#page-1:checked ~ .container{
-    label[for="page-1"]{
+#page-1:checked ~ .container {
+    label[for="page-1"] {
         background-color: black;
         color: white;
     }
-    .page:nth-child(1){
-        display:block;
+
+    .page:nth-child(1) {
+        display: block;
         animation: fade-in 1s;
     }
 }
 
-#page-2:checked ~ .container{
-    label[for="page-2"]{
+#page-2:checked ~ .container {
+    label[for="page-2"] {
         background-color: black;
         color: white;
     }
-    .page:nth-child(2){
-        display:block;
+
+    .page:nth-child(2) {
+        display: block;
         animation: fade-in 1s;
     }
 }
 
-#page-3:checked ~ .container{
-    label[for="page-3"]{
+#page-3:checked ~ .container {
+    label[for="page-3"] {
         background-color: black;
         color: white;
     }
-    .page:nth-child(3){
-        display:block;
+
+    .page:nth-child(3) {
+        display: block;
         animation: fade-in 1s;
     }
 }
 
-#page-4:checked ~ .container{
-    label[for="page-4"]{
+#page-4:checked ~ .container {
+    label[for="page-4"] {
         background-color: black;
         color: white;
     }
-    .page:nth-child(4){
-        display:block;
+
+    .page:nth-child(4) {
+        display: block;
         animation: fade-in 1s;
     }
 }
 
-@keyframes fade-in{
-    from {opacity: 0;
-          transform: translate(5em);}
-    to   {opacity: 1;
-            transform: translate(0);}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translate(5em);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
