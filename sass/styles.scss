@@ -2,12 +2,16 @@ html body {
     font-family: 'Catamaran', sans-serif;
 }
 
-input[type=radio] {
+input[type=radio], {
     display: none;
 }
 
 .header {
     padding: 1rem 0 0 0.5em;
+}
+
+.joke-link {
+    display:inline;
 }
 
 .nav-list {

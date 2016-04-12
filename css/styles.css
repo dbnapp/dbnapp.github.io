@@ -7,6 +7,9 @@ input[type=radio] {
 .header {
   padding: 1rem 0 0 0.5em; }
 
+.joke-link {
+  display: inline; }
+
 .nav-list li {
   display: inline-block;
   list-style: none;
