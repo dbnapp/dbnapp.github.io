@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import anime from 'animejs';
 
 const BigLogoContainer = styled.div`
   position: absolute;
@@ -8,19 +8,24 @@ const BigLogoContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  font-size: 6rem;
+  font-size: 96px;
   background: linear-gradient(#ed0da9, #e8eef2, #acfcd9);
-  color: transparent;
-  background-clip: text;
+  color: #00072d;
   -webkit-background-clip: text;
-  -webkit-text-stroke-color: blue;
+  -webkit-text-stroke: 4px transparent;
 `;
 
 const BigLogoPart = styled.div``;
 
 const BigLogo = props => {
+  useEffect(() => {
+    anime({
+      targets: '.logo div',
+    });
+  }, []);
+
   return (
-    <BigLogoContainer>
+    <BigLogoContainer className="logo">
       <BigLogoPart>Daryl</BigLogoPart>
       <BigLogoPart>Brendt</BigLogoPart>
       <BigLogoPart>Napp</BigLogoPart>
