@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { reducer } from './store/reducer';
 import styled from 'styled-components';
 import BigLogo from './components/BigLogo';
+import Navigation from './components/Navigation';
 
 const AppContainer = styled.div`
   position: absolute;
@@ -19,8 +23,16 @@ const App = () => {
   return (
     <AppContainer>
       <BigLogo />
+      <Navigation />
     </AppContainer>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const store = createStore(reducer);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);

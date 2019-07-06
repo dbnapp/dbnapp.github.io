@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import anime from 'animejs';
 
 const BigLogoContainer = styled.div`
   position: absolute;
@@ -18,12 +17,6 @@ const BigLogoContainer = styled.div`
 const BigLogoPart = styled.div``;
 
 const BigLogo = props => {
-  useEffect(() => {
-    anime({
-      targets: '.logo div',
-    });
-  }, []);
-
   return (
     <BigLogoContainer className="logo">
       <BigLogoPart>Daryl</BigLogoPart>
