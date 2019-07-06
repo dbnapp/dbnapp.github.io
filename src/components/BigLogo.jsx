@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const BigLogoContainer = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${({ shrink }) => (shrink ? 0 : '50%')};
+  left: ${({ shrink }) => (shrink ? 0 : '50%')};
   transform: translate(-50%, -50%);
 
   font-size: 96px;
@@ -18,7 +19,7 @@ const BigLogoPart = styled.div``;
 
 const BigLogo = props => {
   return (
-    <BigLogoContainer className="logo">
+    <BigLogoContainer id="logo" {...props}>
       <BigLogoPart>Daryl</BigLogoPart>
       <BigLogoPart>Brendt</BigLogoPart>
       <BigLogoPart>Napp</BigLogoPart>
@@ -26,6 +27,8 @@ const BigLogo = props => {
   );
 };
 
-BigLogo.propTypes = {};
+BigLogo.propTypes = {
+  shrink: PropTypes.bool,
+};
 
 export default BigLogo;
