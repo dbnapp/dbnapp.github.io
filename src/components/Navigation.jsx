@@ -22,7 +22,7 @@ const NavMenu = styled.nav`
     border: 1px solid ${({ theme }) => theme.fg};
     border-bottom-width: 0;
     color: ${({ theme }) => theme.accentTertiary};
-    transition: all 1s;
+    transition: all 500ms;
 
     :nth-of-type(1) {
       transition-delay: 150ms;
@@ -48,16 +48,28 @@ const NavMenu = styled.nav`
     opacity: 0.3;
     transform: translateY(60%);
     line-height: inherit;
+
+    :hover {
+      opacity: 1;
+    }
   }
   &.minimized.appear a {
     opacity: 0;
     transform: translateY(100%);
     line-height: inherit;
+
+    :hover {
+      opacity: 1;
+    }
   }
   &.minimized.appear-done a {
     opacity: 0.3;
     transform: translateY(60%);
     line-height: inherit;
+
+    :hover {
+      opacity: 1;
+    }
   }
 `;
 

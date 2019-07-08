@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const ContactSection = styled.section`
+  position: absolute;
   opacity: 0;
   padding: 0 10%;
   transition: all 1s;

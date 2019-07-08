@@ -22,7 +22,6 @@ const AppContainer = styled.div`
 `;
 
 const Scrollable = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -37,21 +36,21 @@ const App = ({ match: { params } }) => (
   <AppContainer>
     <Scrollable>
       <MainContainer>
-        <TransitionGroup appear>
+        <TransitionGroup appear component={null}>
           {params.filter === 'about' && (
-            <CSSTransition timeout={{ enter: 500, exit: 1000 }} unmountOnExit>
+            <CSSTransition timeout={{ enter: 1000, exit: 500 }} unmountOnExit>
               <AboutPage />
             </CSSTransition>
           )}
 
           {params.filter === 'history' && (
-            <CSSTransition timeout={{ enter: 500, exit: 1000 }} unmountOnExit>
+            <CSSTransition timeout={{ enter: 1000, exit: 500 }} unmountOnExit>
               <HistoryPage />
             </CSSTransition>
           )}
 
           {params.filter === 'contact' && (
-            <CSSTransition timeout={{ enter: 500, exit: 1000 }} unmountOnExit>
+            <CSSTransition timeout={{ enter: 1000, exit: 500 }} unmountOnExit>
               <ContactPage />
             </CSSTransition>
           )}

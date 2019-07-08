@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AboutSection = styled.section`
+  position: absolute;
   opacity: 0;
   padding: 0 10%;
   transition: all 1s;
@@ -50,6 +51,8 @@ const AboutPage = () => (
     <p>
       <Shrink>&ldquo;about me&rdquo;.</Shrink>
     </p>
+
+    <H2>Thank You.</H2>
 
     <H2>Now that that&apos;s out of the way, let me introduce myself</H2>
 
