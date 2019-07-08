@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Logo from './Logo';
 import Navigation from './Navigation';
 import AboutPage from './AboutPage';
@@ -36,9 +37,25 @@ const App = ({ match: { params } }) => (
   <AppContainer>
     <Scrollable>
       <MainContainer>
-        <AboutPage visible={params.filter === 'about'} />
-        <HistoryPage visible={params.filter === 'history'} />
-        <ContactPage visible={params.filter === 'contact'} />
+        <TransitionGroup appear>
+          {params.filter === 'about' && (
+            <CSSTransition timeout={{ enter: 500, exit: 1000 }} unmountOnExit>
+              <AboutPage />
+            </CSSTransition>
+          )}
+
+          {params.filter === 'history' && (
+            <CSSTransition timeout={{ enter: 500, exit: 1000 }} unmountOnExit>
+              <HistoryPage />
+            </CSSTransition>
+          )}
+
+          {params.filter === 'contact' && (
+            <CSSTransition timeout={{ enter: 500, exit: 1000 }} unmountOnExit>
+              <ContactPage />
+            </CSSTransition>
+          )}
+        </TransitionGroup>
       </MainContainer>
     </Scrollable>
 
