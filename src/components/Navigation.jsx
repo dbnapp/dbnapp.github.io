@@ -23,7 +23,7 @@ const NavMenu = styled.nav`
   }
 `;
 
-const Navigation = props => {
+const Navigation = (props) => {
   useEffect(() => {
     anime({
       targets: '#nav a',
