@@ -1,7 +1,17 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import anime from 'animejs';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+
+const slideUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+`;
 
 const NavMenu = styled.nav`
   font-family: serif;
@@ -16,30 +26,33 @@ const NavMenu = styled.nav`
     width: 3.5em;
     height: 3.5em;
     transform: translateY(100%);
-    border: 1px solid white;
+    line-height: 3.5em;
     text-align: center;
     text-decoration: none;
-    color: white;
+    border: 1px solid ${({ theme }) => theme.fg};
+    color: ${({ theme }) => theme.accentTertiary};
+
+    animation: 1s ${slideUp} ease forwards;
+
+    :nth-of-type(1) {
+      animation-delay: 150ms;
+    }
+    :nth-of-type(2) {
+      animation-delay: 300ms;
+    }
+    :nth-of-type(3) {
+      animation-delay: 450ms;
+    }
   }
 `;
 
-const Navigation = (props) => {
-  useEffect(() => {
-    anime({
-      targets: '#nav a',
-      translateY: ['100%', '0%'],
-      easing: 'easeOutQuint',
-      delay: anime.stagger(150),
-    });
-  }, []);
-  return (
-    <NavMenu id="nav">
-      <Link to="/info">Info</Link>
-      <Link to="/history">History</Link>
-      <Link to="/contact">Contact</Link>
-    </NavMenu>
-  );
-};
+const Navigation = () => (
+  <NavMenu id="nav">
+    <Link to="/info">Info</Link>
+    <Link to="/history">History</Link>
+    <Link to="/contact">Contact</Link>
+  </NavMenu>
+);
 
 Navigation.propTypes = {};
 

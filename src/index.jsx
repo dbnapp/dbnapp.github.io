@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
@@ -32,6 +33,12 @@ const App = ({ match: { params } }) => (
     <Navigation />
   </AppContainer>
 );
+
+App.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.object,
+  }).isRequired,
+};
 
 ReactDOM.render(
   <Router>
