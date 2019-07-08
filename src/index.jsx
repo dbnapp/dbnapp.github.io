@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { reducer } from './store/reducer';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import BigLogo from './components/BigLogo';
 import Navigation from './components/Navigation';
 
@@ -29,22 +26,18 @@ const theme = {
   accentTertiary: '#acfcd9',
 };
 
-const App = ({ match: { params } }) => {
-  return (
-    <AppContainer>
-      <BigLogo shrink={params.filter !== undefined} />
-      <Navigation />
-    </AppContainer>
-  );
-};
-
-const store = createStore(reducer);
+const App = ({ match: { params } }) => (
+  <AppContainer>
+    <BigLogo aside={params.filter !== undefined} />
+    <Navigation />
+  </AppContainer>
+);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
+  <Router>
+    <ThemeProvider theme={theme}>
       <Route path="/:filter?" component={App} />
-    </Router>
-  </Provider>,
-  document.getElementById('app')
+    </ThemeProvider>
+  </Router>,
+  document.getElementById('app'),
 );
