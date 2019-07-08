@@ -30,6 +30,7 @@ const NavMenu = styled.nav`
     text-align: center;
     text-decoration: none;
     border: 1px solid ${({ theme }) => theme.fg};
+    border-bottom-width: 0;
     color: ${({ theme }) => theme.accentTertiary};
 
     animation: 1s ${slideUp} ease forwards;
@@ -48,7 +49,7 @@ const NavMenu = styled.nav`
 
 const Navigation = () => (
   <NavMenu id="nav">
-    <Link to="/info">Info</Link>
+    <Link to="/about">About</Link>
     <Link to="/history">History</Link>
     <Link to="/contact">Contact</Link>
   </NavMenu>

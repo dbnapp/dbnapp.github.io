@@ -17,8 +17,8 @@ const BigLogoContainer = styled.div`
 
   ${({ aside }) => aside
     && `
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 10px;
     transform: translate(0, 0);
     font-size: 24px;
     -webkit-text-stroke: 3px transparent;
