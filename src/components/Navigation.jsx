@@ -1,17 +1,8 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const slideUp = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-`;
+import { CSSTransition } from 'react-transition-group';
 
 const NavMenu = styled.nav`
   font-family: serif;
@@ -25,36 +16,67 @@ const NavMenu = styled.nav`
     font-size: 24px;
     width: 3.5em;
     height: 3.5em;
-    transform: translateY(100%);
     line-height: 3.5em;
     text-align: center;
     text-decoration: none;
     border: 1px solid ${({ theme }) => theme.fg};
     border-bottom-width: 0;
     color: ${({ theme }) => theme.accentTertiary};
-
-    animation: 1s ${slideUp} ease forwards;
+    transition: all 1s;
 
     :nth-of-type(1) {
-      animation-delay: 150ms;
+      transition-delay: 150ms;
     }
     :nth-of-type(2) {
-      animation-delay: 300ms;
+      transition-delay: 300ms;
     }
     :nth-of-type(3) {
-      animation-delay: 450ms;
+      transition-delay: 450ms;
     }
+  }
+
+  &.appear a {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  &.appear-done a {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  &.minimized a {
+    opacity: 0.3;
+    transform: translateY(60%);
+    line-height: inherit;
+  }
+  &.minimized.appear a {
+    opacity: 0;
+    transform: translateY(100%);
+    line-height: inherit;
+  }
+  &.minimized.appear-done a {
+    opacity: 0.3;
+    transform: translateY(60%);
+    line-height: inherit;
   }
 `;
 
-const Navigation = () => (
-  <NavMenu id="nav">
-    <Link to="/about">About</Link>
-    <Link to="/history">History</Link>
-    <Link to="/contact">Contact</Link>
-  </NavMenu>
+const Navigation = ({ minimized }) => (
+  <CSSTransition appear in timeout={0}>
+    <NavMenu id="nav" className={minimized ? 'minimized' : ''}>
+      <Link to="/about">About</Link>
+      <Link to="/history">History</Link>
+      <Link to="/contact">Contact</Link>
+    </NavMenu>
+  </CSSTransition>
 );
 
-Navigation.propTypes = {};
+Navigation.propTypes = {
+  minimized: PropTypes.bool,
+};
+
+Navigation.defaultProps = {
+  minimized: false,
+};
 
 export default Navigation;

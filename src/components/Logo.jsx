@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const BigLogoContainer = styled.div`
+const LogoContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11,7 +11,7 @@ const BigLogoContainer = styled.div`
 
   font-size: 96px;
   background: ${({ theme }) => `linear-gradient(${theme.accentPrimary}, ${theme.fg}, ${theme.accentTertiary})`};
-  color: #00072d;
+  color: ${({ theme }) => theme.bg};
   -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
 
@@ -22,27 +22,33 @@ const BigLogoContainer = styled.div`
     transform: translate(0, 0);
     font-size: 24px;
     -webkit-text-stroke: 3px transparent;
+    opacity: 0.3;
+    transition: opacity 500ms;
+
+    :hover {
+      opacity: 1;
+    }
   `}
 `;
 
-const BigLogoPart = styled.div``;
+const LogoPart = styled.div``;
 
-const BigLogo = props => (
+const Logo = props => (
   <Link to="/">
-    <BigLogoContainer id="logo" {...props}>
-      <BigLogoPart>Daryl</BigLogoPart>
-      <BigLogoPart>Brendt</BigLogoPart>
-      <BigLogoPart>Napp</BigLogoPart>
-    </BigLogoContainer>
+    <LogoContainer id="logo" {...props}>
+      <LogoPart>Daryl</LogoPart>
+      <LogoPart>Brendt</LogoPart>
+      <LogoPart>Napp</LogoPart>
+    </LogoContainer>
   </Link>
 );
 
-BigLogo.propTypes = {
+Logo.propTypes = {
   aside: PropTypes.bool,
 };
 
-BigLogo.defaultProps = {
+Logo.defaultProps = {
   aside: false,
 };
 
-export default BigLogo;
+export default Logo;
