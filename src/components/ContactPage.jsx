@@ -59,7 +59,7 @@ const SuperLink = styled.a`
 
 const ContactPage = () => (
   <ContactSection>
-    <h1>If you&apos;d like to reach me you can send me an email at</h1>
+    <h1>Here&apos;s my email if you want to talk</h1>
     <p>
       <SuperLink href="mailto:dbnapp@gmail.com">dbnapp@gmail.com</SuperLink>
     </p>

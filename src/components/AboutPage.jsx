@@ -4,8 +4,12 @@ import styled from 'styled-components';
 const AboutSection = styled.section`
   position: absolute;
   opacity: 0;
-  padding: 0 10%;
+  padding: 0 10% 20em;
   transition: all 1s;
+
+  @media (min-width: 768px) {
+    padding: 0 20% 20em;
+  }
 
   &.appear {
     opacity: 0;
@@ -63,8 +67,8 @@ const AboutPage = () => (
     </p>
 
     <p>
-      I also have experience with other frameworks and libraries like jQuery and KnockoutJS, and how
-      to integrate them into existing code bases. I&apos;m no stranger to writing unit tests with
+      I&apos;ve messed around with other frameworks and libraries like jQuery and KnockoutJS, and
+      even integrated them into other frameworks. I&apos;m no stranger to writing unit tests with
       Mocha or configuring bundlers like webpack as well.
     </p>
 
