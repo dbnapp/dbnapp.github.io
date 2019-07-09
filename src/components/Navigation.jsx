@@ -4,6 +4,32 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
+const NavItem = styled.li`
+  font-size: 24px;
+  width: 3.5em;
+  height: 3.5em;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid ${({ theme }) => theme.fg};
+  border-bottom-width: 0;
+  transition: all 500ms;
+  pointer-events: auto;
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: ${({ theme }) => theme.accentTertiary};
+    text-decoration: none;
+
+    span {
+      position: absolute;
+      transition: all 1s;
+      transform: translate(-50%, 100%);
+    }
+  }
+`;
+
 const NavMenu = styled.nav`
   font-family: serif;
   position: absolute;
@@ -11,19 +37,17 @@ const NavMenu = styled.nav`
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: none;
 
-  a {
-    font-size: 24px;
-    width: 3.5em;
-    height: 3.5em;
-    line-height: 3.5em;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid ${({ theme }) => theme.fg};
-    border-bottom-width: 0;
-    color: ${({ theme }) => theme.accentTertiary};
-    transition: all 500ms;
+  ul {
+    list-style: none;
+    display: inherit;
+    margin: 0;
+    padding: 0;
+  }
 
+  ${NavItem} {
     :nth-of-type(1) {
       transition-delay: 150ms;
     }
@@ -35,40 +59,34 @@ const NavMenu = styled.nav`
     }
   }
 
-  &.appear a {
+  &.appear ${NavItem} {
     opacity: 0;
     transform: translateY(100%);
   }
-  &.appear-done a {
-    opacity: 1;
-    transform: translateY(0%);
-  }
 
-  &.minimized a {
+  &.minimized ${NavItem} {
     opacity: 0.3;
     transform: translateY(60%);
-    line-height: inherit;
 
     :hover {
       opacity: 1;
     }
+
+    a span {
+      transform: translate(-50%, 0%);
+    }
   }
-  &.minimized.appear a {
+
+  &.minimized.appear ${NavItem} {
     opacity: 0;
     transform: translateY(100%);
-    line-height: inherit;
 
     :hover {
       opacity: 1;
     }
-  }
-  &.minimized.appear-done a {
-    opacity: 0.3;
-    transform: translateY(60%);
-    line-height: inherit;
 
-    :hover {
-      opacity: 1;
+    a span {
+      transform: translate(-50%, 0%);
     }
   }
 `;
@@ -76,9 +94,23 @@ const NavMenu = styled.nav`
 const Navigation = ({ minimized }) => (
   <CSSTransition appear in timeout={0}>
     <NavMenu id="nav" className={minimized ? 'minimized' : ''}>
-      <Link to="/about">About</Link>
-      <Link to="/history">History</Link>
-      <Link to="/contact">Contact</Link>
+      <ul>
+        <NavItem>
+          <Link to="/about">
+            <span>About</span>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/history">
+            <span>History</span>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/contact">
+            <span>Contact</span>
+          </Link>
+        </NavItem>
+      </ul>
     </NavMenu>
   </CSSTransition>
 );
