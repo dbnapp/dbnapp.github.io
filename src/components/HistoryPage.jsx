@@ -3,7 +3,7 @@ import Timeline from './Timeline';
 
 const events = [
   {
-    date: 'today',
+    date: 'Today',
     title: 'Working at Pefin',
     type: 'employment',
     keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
@@ -14,7 +14,7 @@ const events = [
   {
     date: '12/19/2017',
     title: 'Married!',
-    description: 'We had a wedding with a christmas theme.',
+    description: 'We had a wedding with a Christmas theme.',
     images: [],
   },
   {
@@ -26,7 +26,7 @@ const events = [
   {
     date: '12/25/2016',
     title: 'Engaged!',
-    description: 'We adopted a new furry little guy. His name is Stefan!',
+    description: 'We got engaged on Christmas. You can probably tell we enjoy this time of year.',
     images: [],
   },
   {
