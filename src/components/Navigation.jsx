@@ -9,7 +9,6 @@ const NavItem = styled.li`
   width: 3.5em;
   height: 3.5em;
   text-align: center;
-  text-decoration: none;
   border: 1px solid ${({ theme }) => theme.fg};
   border-bottom-width: 0;
   transition: all 500ms;
@@ -20,7 +19,6 @@ const NavItem = styled.li`
     height: 100%;
     width: 100%;
     color: ${({ theme }) => theme.accentTertiary};
-    text-decoration: none;
 
     span {
       position: absolute;
