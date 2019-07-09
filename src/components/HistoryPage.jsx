@@ -1,7 +1,61 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Timeline from './Timeline';
 
-const HistoryPage = props => <div />;
+const events = [
+  {
+    date: 'today',
+    title: 'Working at Pefin',
+    type: 'employment',
+    keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
+    description:
+      'Currently working as a web developer at Pefin, an NYC based start-up. We use a combination of Knockout and React components to display financial projections',
+    images: [],
+  },
+  {
+    date: '12/19/2017',
+    title: 'Married!',
+    description: 'We had a wedding with a christmas theme.',
+    images: [],
+  },
+  {
+    date: '01/07/2017',
+    title: 'Adopted a cat',
+    description: 'We adopted a new furry little guy. His name is Stefan!',
+    images: [],
+  },
+  {
+    date: '12/25/2016',
+    title: 'Engaged!',
+    description: 'We adopted a new furry little guy. His name is Stefan!',
+    images: [],
+  },
+  {
+    date: '05/23/2016',
+    type: 'employment',
+    title: 'Started working at Pefin',
+    images: [],
+  },
+  {
+    date: '09/15/2014',
+    title: 'Started working at Niksun',
+    type: 'employment',
+    keywords: ['JavaScript', 'ReactJS', 'AngularJS (v1)', 'SmartGWT', 'Java'],
+    description: [
+      'Worked as a junior software engineer at Niksun, a network monitoring and security company. I developed components to display network data in various different kinds of charts, graphs, and tables.',
+      'Initially we started building a new web based UI for the Java based front-end app. Eventually the project took on a new life as a full JavaScript project using Angular. Later we also started integrating React components to improve performance.',
+    ],
+    images: [],
+  },
+  {
+    date: 'Spring 2013',
+    type: 'employment',
+    title: 'Graduated from Rutgers University New Brunswick',
+    description: 'Recieved a Bachelor of Science in Computer Science',
+    images: [],
+  },
+];
+
+const HistoryPage = () => <Timeline events={events} />;
 
 HistoryPage.propTypes = {};
 
