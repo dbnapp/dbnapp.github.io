@@ -16,19 +16,30 @@ const flyOut = keyframes`
     top: -40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 96px;
-    opacity: 1;
   }
-  75%{
+  60%{
     left: 10px;
-    font-size: 24px;
+    transform: translate(0, 0);
   }
   100% {
     top: 10px;
     left: 10px;
     transform: translate(0, 0);
-    font-size: 24px;
-    -webkit-text-stroke: 3px transparent;
+  }
+`;
+const shrinkSVG = keyframes`
+  0%{
+    height: 300px;
+  }
+  50%{
+    height: 300px;
+  }
+  60%{
+    height: 120px;
+    opacity: 1;
+  }
+  100%{
+    height: 120px;
     opacity: 0.3;
   }
 `;
@@ -40,7 +51,6 @@ const flyIn = keyframes`
   30%{
     top: -30%;
     left: 50%;
-    opacity: 1;
   }
   60%{
     top: 50%;
@@ -57,20 +67,40 @@ const LogoContainer = styled.div`
   top: -40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 500ms;
   animation: ${flyIn} 1.5s ease forwards;
 
-  font-size: 96px;
-  background: ${({ theme }) => `linear-gradient(${theme.accentPrimary}, ${theme.fg}, ${theme.accentTertiary})`};
-  color: ${({ theme }) => theme.bg};
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 4px transparent;
+  svg {
+    height: 300px;
+  }
+
+  #gradient {
+    stop:nth-child(1) {
+      stop-color: ${({ theme }) => theme.accentPrimary};
+    }
+    stop:nth-child(2) {
+      stop-color: ${({ theme }) => theme.fg};
+    }
+    stop:nth-child(3) {
+      stop-color: ${({ theme }) => theme.accentTertiary};
+    }
+  }
+
+  text {
+    transition: opacity 500ms;
+    fill: transparent;
+  }
+
+  tspan {
+    font-size: 96px;
+    stroke-width: 2px;
+    stroke: url(#gradient);
+  }
 
   &.aside {
     animation: ${flyOut} 2.5s ease forwards;
 
-    :hover {
-      opacity: 1;
+    svg {
+      animation: ${shrinkSVG} 2.5s ease forwards;
     }
   }
 `;
@@ -78,9 +108,26 @@ const LogoContainer = styled.div`
 const Logo = ({ aside }) => (
   <Link to="/">
     <LogoContainer id="logo" className={aside ? 'aside' : ''}>
-      <div>Daryl</div>
-      <div>Brendt</div>
-      <div>Napp</div>
+      <svg viewBox="-10 0 300 300">
+        <defs>
+          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="100%">
+            <stop offset="0%" />
+            <stop offset="50%" />
+            <stop offset="100%" />
+          </linearGradient>
+        </defs>
+        <text>
+          <tspan x="0" y="80">
+            Daryl
+          </tspan>
+          <tspan x="0" dy="80">
+            Brendt
+          </tspan>
+          <tspan x="0" dy="80">
+            Napp
+          </tspan>
+        </text>
+      </svg>
     </LogoContainer>
   </Link>
 );

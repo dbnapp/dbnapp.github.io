@@ -19,6 +19,10 @@ const AppContainer = styled.div`
   background: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.fg};
   font-family: sans-serif;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Scrollable = styled.div`
