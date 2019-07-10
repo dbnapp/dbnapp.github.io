@@ -39,7 +39,7 @@ const AboutSection = styled.section`
 
 const Shrink = styled.span`
   font-size: 12px;
-  color: ${({ theme }) => theme.accentSecondary};
+  color: ${({ theme }) => theme.accentPrimary};
 `;
 
 const H1 = styled.h1`

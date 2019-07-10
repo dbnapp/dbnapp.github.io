@@ -3,7 +3,7 @@ import Timeline from './Timeline';
 
 const events = [
   {
-    date: 'Today',
+    date: 'Present Day',
     title: 'Working at Pefin',
     type: 'employment',
     keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
@@ -12,31 +12,31 @@ const events = [
     images: [],
   },
   {
-    date: '12/19/2017',
+    date: 'December 19, 2017',
     title: 'Married!',
     description: 'We had a wedding with a Christmas theme.',
     images: [],
   },
   {
-    date: '01/07/2017',
+    date: 'January 07, 2017',
     title: 'Adopted a cat',
     description: 'We adopted a new furry little guy. His name is Stefan!',
     images: [],
   },
   {
-    date: '12/25/2016',
+    date: 'December 25, 2016',
     title: 'Engaged!',
     description: 'We got engaged on Christmas. You can probably tell we enjoy this time of year.',
     images: [],
   },
   {
-    date: '05/23/2016',
+    date: 'May 23, 2016',
     type: 'employment',
     title: 'Started working at Pefin',
     images: [],
   },
   {
-    date: '09/15/2014',
+    date: 'September 15, 2014',
     title: 'Started working at Niksun',
     type: 'employment',
     keywords: ['JavaScript', 'ReactJS', 'AngularJS (v1)', 'SmartGWT', 'Java'],
