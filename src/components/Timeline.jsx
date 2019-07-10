@@ -1,6 +1,6 @@
 import React, { useReducer, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 
 const TimelineFilter = styled.label`
@@ -103,12 +103,20 @@ const EventNodeLine = styled.div`
   position: absolute;
   top: 3.7em;
   left: 2em;
-  height: 230%;
+  height: calc(100% + 6.7em);
   border: 1px solid;
 `;
 
 const EventDetails = styled.div`
   display: none;
+  opacity: 0;
+  transition: all 0.5s;
+`;
+
+const breathingHighlight = keyframes`
+  to{
+    border-color: white;
+  }
 `;
 
 const EventNode = styled.section`
@@ -119,10 +127,18 @@ const EventNode = styled.section`
   &.selected {
     ${EventNodeIcon} {
       border-color: ${({ theme }) => theme.accentPrimary};
+      animation: ${breathingHighlight} 0.5s ease-in-out infinite alternate;
     }
+  }
 
-    ${EventDetails} {
+  ${EventDetails} {
+    &.enter {
       display: block;
+      opacity: 0;
+    }
+    &.enter-done {
+      display: block;
+      opacity: 1;
     }
   }
 `;
@@ -142,6 +158,7 @@ const Title = styled.h1`
 
 const Keywords = styled.ul`
   position: relative;
+  color: ${({ theme }) => theme.accentTertiary};
 `;
 
 const Keyword = styled.li``;
@@ -186,9 +203,9 @@ const renderEvent = (event, i, selectedEventDate, dispatch) => {
       <EventNodeLine />
       <Date onClick={selectEvent}>{event.date}</Date>
       <Title onClick={selectEvent}>{event.title}</Title>
-      <CSSTransition in={isSelected} timeout={{ enter: 1000, exit: 500 }}>
+      <CSSTransition appear in={isSelected} timeout={{ enter: 500, exit: 500 }}>
         <EventDetails>
-          {keywords && <Keywords>{event.keywords}</Keywords>}
+          {keywords && <Keywords>{event.keywords.join(', ')}</Keywords>}
           {descriptions}
         </EventDetails>
       </CSSTransition>
