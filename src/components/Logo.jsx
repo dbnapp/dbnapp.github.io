@@ -35,11 +35,11 @@ const shrinkSVG = keyframes`
     height: 300px;
   }
   60%{
-    height: 120px;
+    height: 100px;
     opacity: 1;
   }
   100%{
-    height: 120px;
+    height: 100px;
     opacity: 0.3;
   }
 `;

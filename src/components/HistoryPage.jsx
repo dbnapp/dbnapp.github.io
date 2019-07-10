@@ -8,7 +8,7 @@ const events = [
     type: 'employment',
     keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
     description:
-      'Currently working as a web developer at Pefin, an NYC based start-up. We use a combination of Knockout and React components to display financial projections',
+      'Currently working as a web developer at Pefin, an NYC based start-up. We use a combination of Knockout and React components to display financial projections.',
     images: [],
   },
   {
