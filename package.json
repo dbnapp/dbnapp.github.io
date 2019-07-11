@@ -1,6 +1,6 @@
 {
   "name": "dbnapp.github.io",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "It's my site",
   "main": "index.js",
   "private": true,
@@ -45,5 +45,5 @@
   "bugs": {
     "url": "https://github.com/dbnapp/dbnapp.github.io/issues"
   },
-  "homepage": "https://github.com/dbnapp/dbnapp.github.io#readme"
+  "homepage": "https://dbnapp.github.io"
 }

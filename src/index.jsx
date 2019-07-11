@@ -16,7 +16,7 @@ const mainTheme = {
 ReactDOM.render(
   <Router>
     <ThemeProvider theme={mainTheme}>
-      <Route path="/:filter?" component={App} />
+      <Route path="/:filter?" component={App} basename={process.env.PUBLIC_URL} />
     </ThemeProvider>
   </Router>,
   document.getElementById('app'),
