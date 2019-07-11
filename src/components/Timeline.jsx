@@ -1,7 +1,7 @@
 import React, { useReducer, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
-import { CSSTransition } from 'react-transition-group';
+import styled from 'styled-components';
+import TimelineEvent from './TimelineEvent';
 
 const TimelineFilter = styled.label`
   position: fixed;
@@ -50,6 +50,7 @@ const EventsContainer = styled.div`
     padding: 0 20% 20em;
   }
 `;
+
 const TimelineContainer = styled.div`
   transition: all 1s;
 
@@ -90,127 +91,9 @@ const TimelineContainer = styled.div`
   }
 `;
 
-const EventNodeIcon = styled.div`
-  position: absolute;
-  width: 3em;
-  height: 3em;
-  border: 2px solid;
-  border-radius: 50%;
-`;
-
-const EventNodeLine = styled.div`
-  display: inline-block;
-  position: absolute;
-  top: 3.7em;
-  left: 2em;
-  height: calc(100% + 6.7em);
-  border: 1px solid;
-`;
-
-const EventDetails = styled.div`
-  display: none;
-  opacity: 0;
-  transition: all 0.5s;
-`;
-
-const breathingHighlight = keyframes`
-  to{
-    border-color: white;
-  }
-`;
-
-const EventNode = styled.section`
-  position: relative;
-  margin: 0 0 10em;
-  padding: 0.5em;
-
-  &.selected {
-    ${EventNodeIcon} {
-      border-color: ${({ theme }) => theme.accentPrimary};
-      animation: ${breathingHighlight} 0.5s ease-in-out infinite alternate;
-    }
-  }
-
-  ${EventDetails} {
-    &.enter {
-      display: block;
-      opacity: 0;
-    }
-    &.enter-done {
-      display: block;
-      opacity: 1;
-    }
-  }
-`;
-
-const Date = styled.div`
-  position: absolute;
-  transform: translate(4em, 0.2em);
-  width: 10em;
-`;
-
-const Title = styled.h1`
-  position: relative;
-  left: 2.6em;
-  max-width: 90%;
-  font-weight: normal;
-`;
-
-const Keywords = styled.ul`
-  position: relative;
-  color: ${({ theme }) => theme.accentTertiary};
-`;
-
-const Keyword = styled.li``;
-
-const Description = styled.p`
-  position: relative;
-  left: 2.6em;
-  max-width: 80%;
-`;
-
 const actionType = {
   SELECT_EVENT: 'SELECT_EVENT',
   FILTER: 'FILTER',
-};
-
-const renderEvent = (event, i, selectedEventDate, dispatch) => {
-  let keywords = null;
-  let descriptions = null;
-  const hasMultilineDescription = event.description && event.description instanceof Array;
-  const isSelected = event.date === selectedEventDate;
-
-  const selectEvent = () => {
-    dispatch({
-      type: actionType.SELECT_EVENT,
-      selectedEventDate: event.date,
-    });
-  };
-
-  if (event.keywords) {
-    keywords = event.keywords.map(kw => <Keyword key={kw}>{kw}</Keyword>);
-  }
-
-  if (hasMultilineDescription) {
-    descriptions = event.description.map(desc => <Description key={desc}>{desc}</Description>);
-  } else if (event.description) {
-    descriptions = <Description>{event.description}</Description>;
-  }
-
-  return (
-    <EventNode key={event.date} className={isSelected ? 'selected' : ''}>
-      <EventNodeIcon onClick={selectEvent} />
-      <EventNodeLine />
-      <Date onClick={selectEvent}>{event.date}</Date>
-      <Title onClick={selectEvent}>{event.title}</Title>
-      <CSSTransition appear in={isSelected} timeout={{ enter: 500, exit: 500 }}>
-        <EventDetails>
-          {keywords && <Keywords>{event.keywords.join(', ')}</Keywords>}
-          {descriptions}
-        </EventDetails>
-      </CSSTransition>
-    </EventNode>
-  );
 };
 
 const reducer = (state, action) => {
@@ -231,19 +114,39 @@ const reducer = (state, action) => {
   }
 };
 
+const renderEvent = (event, selectedEventDate, dispatch) => {
+  const isSelected = event.date === selectedEventDate;
+
+  const selectEvent = () => {
+    dispatch({
+      type: actionType.SELECT_EVENT,
+      selectedEventDate: event.date,
+    });
+  };
+
+  return (
+    <TimelineEvent
+      key={event.date}
+      event={event}
+      isSelected={isSelected}
+      onSelectEventClick={selectEvent}
+    />
+  );
+};
+
 const Timeline = ({ events }) => {
   const [state, dispatch] = useReducer(reducer, {
-    filter: 'life',
+    filter: 'all',
     selectedEventDate: events[0].date,
   });
   const { filter, selectedEventDate } = state;
 
   const eventNodes = useMemo(() => {
     let filteredEvents = events;
-    if (filter !== 'life') {
+    if (filter !== 'all') {
       filteredEvents = events.filter(event => event.type === filter);
     }
-    return filteredEvents.map((event, i) => renderEvent(event, i, selectedEventDate, dispatch));
+    return filteredEvents.map(event => renderEvent(event, selectedEventDate, dispatch));
   }, [events, filter, selectedEventDate]);
 
   const filterCallback = useCallback(
@@ -258,10 +161,10 @@ const Timeline = ({ events }) => {
       <TimelineFilter htmlFor="event-filter">
         <span>&gt;</span>
         <select id="event-filter" value={filter} onChange={filterCallback}>
-          <option value="life">Life</option>
-          <option value="employment">Employment</option>
+          <option value="all">All</option>
+          <option value="work">Work</option>
         </select>
-        <span>Events</span>
+        <span>History</span>
       </TimelineFilter>
     </TimelineContainer>
   );

@@ -5,7 +5,7 @@ const events = [
   {
     date: 'Present Day',
     title: 'Working at Pefin',
-    type: 'employment',
+    type: 'work',
     keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
     description:
       'Currently working as a web developer at Pefin, an NYC based start-up. We use a combination of Knockout and React components to display financial projections.',
@@ -14,7 +14,7 @@ const events = [
   {
     date: 'December 19, 2017',
     title: 'Married!',
-    description: 'We had a wedding with a Christmas theme.',
+    description: 'We had a wedding with a Christmas theme. It even snowed!',
     images: [],
   },
   {
@@ -26,19 +26,22 @@ const events = [
   {
     date: 'December 25, 2016',
     title: 'Engaged!',
-    description: 'We got engaged on Christmas. You can probably tell we enjoy this time of year.',
+    description: [
+      'I propsed to my girlfriend on Christmas Day.',
+      'You can probably tell we enjoy this time of year.',
+    ],
     images: [],
   },
   {
     date: 'May 23, 2016',
-    type: 'employment',
+    type: 'work',
     title: 'Started working at Pefin',
     images: [],
   },
   {
     date: 'September 15, 2014',
     title: 'Started working at Niksun',
-    type: 'employment',
+    type: 'work',
     keywords: ['JavaScript', 'ReactJS', 'AngularJS (v1)', 'SmartGWT', 'Java'],
     description: [
       'Worked as a junior software engineer at Niksun, a network monitoring and security company. I developed components to display network data in various different kinds of charts, graphs, and tables.',
@@ -48,7 +51,8 @@ const events = [
   },
   {
     date: 'Spring 2013',
-    type: 'employment',
+    type: 'work',
+    keywords: ['Bachelor of Science', 'Computer Science'],
     title: 'Graduated from Rutgers University New Brunswick',
     description: 'Recieved a Bachelor of Science in Computer Science',
     images: [],
