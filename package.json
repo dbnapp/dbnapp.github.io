@@ -1,6 +1,6 @@
 {
   "name": "dbnapp.github.io",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "It's my site",
   "main": "index.js",
   "private": true,
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.config.js",
-    "build": "cross-env NODE_ENV=production  webpack --config webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
