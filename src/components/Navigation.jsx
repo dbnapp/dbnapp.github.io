@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 
 const NavItem = styled.li`
   font-size: 24px;
-  width: 3.5em;
+  width: 4em;
   height: 3.5em;
   text-align: center;
   border: 1px solid ${({ theme }) => theme.fg};
