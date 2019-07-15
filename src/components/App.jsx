@@ -36,6 +36,15 @@ const MainContainer = styled.main`
   padding: 20em 0;
 `;
 
+const OpacityGradient = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: ${({ theme }) => `linear-gradient(transparent 70%, ${theme.bg})`};
+`;
+
 const App = ({ match: { params } }) => (
   <AppContainer>
     <Scrollable>
@@ -61,7 +70,7 @@ const App = ({ match: { params } }) => (
         </TransitionGroup>
       </MainContainer>
     </Scrollable>
-
+    <OpacityGradient />
     <Logo aside={params.filter !== undefined} />
     <Navigation minimized={params.filter !== undefined} />
   </AppContainer>
