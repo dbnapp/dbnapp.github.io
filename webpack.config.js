@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 
@@ -36,6 +37,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
+    new BrowserSyncPlugin(
+      {
+        host: 'localhost',
+        port: 3000,
+        proxy: 'http://localhost:8080/',
+      },
+      {
+        reload: false,
+      },
+    ),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
