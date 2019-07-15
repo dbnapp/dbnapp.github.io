@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import TimelineEvent from './TimelineEvent';
 
-const TimelineFilter = styled.label`
+const TimelineFilter = styled.div`
   position: fixed;
   top: 0;
   right: 0;
   color: ${({ theme }) => theme.accentSecondary};
   font-size: 24px;
-  padding: 0.5em;
+  padding: 0 0 0 0.5em;
   background: #00072d;
   border: 1px solid white;
   transition: all 1s;
@@ -32,6 +32,8 @@ const TimelineFilter = styled.label`
 
   select {
     border: none;
+    width: 6.5em;
+    height: 2.5em;
     margin: 3px;
     background: ${({ theme }) => theme.bg};
     color: ${({ theme }) => theme.accentPrimary};
@@ -161,10 +163,9 @@ const Timeline = ({ events }) => {
       <TimelineFilter htmlFor="event-filter">
         <span>&gt;</span>
         <select id="event-filter" value={filter} onChange={filterCallback}>
-          <option value="all">All</option>
-          <option value="work">Work</option>
+          <option value="all">All History</option>
+          <option value="work">Work History</option>
         </select>
-        <span>History</span>
       </TimelineFilter>
     </TimelineContainer>
   );
