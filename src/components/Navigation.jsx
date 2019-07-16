@@ -104,8 +104,8 @@ const Navigation = ({ minimized }) => (
           </Link>
         </NavItem>
         <NavItem>
-          <Link to="/contact">
-            <span>Contact</span>
+          <Link to="/links">
+            <span>Links</span>
           </Link>
         </NavItem>
       </ul>

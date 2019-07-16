@@ -6,7 +6,7 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 import AboutPage from './AboutPage';
 import HistoryPage from './HistoryPage';
-import ContactPage from './ContactPage';
+import LinksPage from './LinksPage';
 
 const AppContainer = styled.div`
   position: absolute;
@@ -62,9 +62,9 @@ const App = ({ match: { params } }) => (
             </CSSTransition>
           )}
 
-          {params.filter === 'contact' && (
+          {params.filter === 'links' && (
             <CSSTransition timeout={{ enter: 1000, exit: 500 }} unmountOnExit>
-              <ContactPage />
+              <LinksPage />
             </CSSTransition>
           )}
         </TransitionGroup>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const ContactSection = styled.section`
+const LinksSection = styled.section`
   position: absolute;
   opacity: 0;
   padding: 0 10%;
@@ -57,17 +57,28 @@ const SuperLink = styled.a`
   color: ${({ theme }) => theme.accentTertiary};
 `;
 
-const ContactPage = () => (
-  <ContactSection>
+const LinksPage = () => (
+  <LinksSection>
     <h1>Here&apos;s my email if you want to talk</h1>
     <p>
       <SuperLink href="mailto:dbnapp@gmail.com">dbnapp@gmail.com</SuperLink>
     </p>
-  </ContactSection>
+    <h2> or see what else I&apos;m up to</h2>
+    <p>
+      <SuperLink href="http://github.com/dbnapp/" target="_blank">
+        github.com/dbnapp
+      </SuperLink>
+    </p>
+    <p>
+      <SuperLink href="https://linkedin.com/in/darylnapp" target="_blank">
+        linkedin.com/in/darylnapp
+      </SuperLink>
+    </p>
+  </LinksSection>
 );
 
-ContactPage.propTypes = {};
+LinksPage.propTypes = {};
 
-ContactPage.defaultProps = {};
+LinksPage.defaultProps = {};
 
-export default ContactPage;
+export default LinksPage;
