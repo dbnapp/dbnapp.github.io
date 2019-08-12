@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 const LinksSection = styled.section`
   position: absolute;
   opacity: 0;
-  padding: 0 10%;
+  padding: 0 10% 20em;
   transition: all 1s;
 
   &.appear {
