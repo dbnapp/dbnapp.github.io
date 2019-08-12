@@ -3,12 +3,12 @@ import Timeline from './Timeline';
 
 const events = [
   {
-    date: 'Present Day',
-    title: 'Working at Pefin',
+    date: 'August 12, 2019',
+    title: 'Started Working at Clarifai',
     type: 'work',
-    keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
+    keywords: ['JavaScript', 'ReactJS', 'Redux'],
     description:
-      'Currently working as a web developer at Pefin, an NYC based start-up. We use a combination of Knockout and React components to display financial projections.',
+      'Currently working as a Full Stack developer at Clarifai.',
     images: [],
   },
   {
@@ -34,8 +34,11 @@ const events = [
   },
   {
     date: 'May 23, 2016',
-    type: 'work',
     title: 'Started working at Pefin',
+    type: 'work',
+    keywords: ['JavaScript', 'ReactJS', 'Redux', 'KnockoutJS'],
+    description:
+      'Worked as a Front End Developer at Pefin, an NYC based start-up. We used a combination of Knockout and React components to display financial projections.',
     images: [],
   },
   {
