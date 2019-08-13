@@ -52,7 +52,7 @@ const freakOut = ({ theme }) => keyframes`
 `;
 
 const SuperLink = styled.a`
-  font-size: 32px;
+  font-size: 24px;
   animation: ${freakOut} 1s ease infinite;
   color: ${({ theme }) => theme.accentTertiary};
 `;
