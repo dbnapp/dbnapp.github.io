@@ -47,7 +47,7 @@ const OpacityGradient = styled.div`
 
 const App = ({ match: { params } }) => (
   <AppContainer>
-    <Scrollable>
+    <Scrollable id="scroll-container">
       <MainContainer>
         <TransitionGroup appear component={null}>
           {params.filter === 'about' && (

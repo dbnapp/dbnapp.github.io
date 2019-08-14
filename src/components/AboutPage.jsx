@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import ScrollMagic from 'scrollmagic';
 
 const AboutSection = styled.section`
   position: absolute;
@@ -38,8 +39,13 @@ const AboutSection = styled.section`
 `;
 
 const Shrink = styled.span`
-  font-size: 12px;
+  font-size: 36px;
   color: ${({ theme }) => theme.accentPrimary};
+  transition: all 0.5s;
+
+  &.active{
+    font-size: 12px;
+  }
 `;
 
 const H1 = styled.h1`
@@ -49,38 +55,59 @@ const H2 = styled.h2`
   margin-block-start: 2em;
 `;
 
-const AboutPage = () => (
-  <AboutSection>
-    <H1>So here&apos;s a little about me</H1>
-    <p>
-      <Shrink>&ldquo;about me&rdquo;.</Shrink>
+const AboutPage = () => {
+  const shrinkText = useRef()
+
+  useEffect(() => {
+
+    const scrollController = new ScrollMagic.Controller({
+      container: `#scroll-container`
+    });
+
+    new ScrollMagic.Scene({
+      offset: 50
+    })
+      .setClassToggle(shrinkText.current, 'active')
+      .addTo(scrollController);
+
+    return () => {
+      scrollController.destroy();
+    }
+  }, [shrinkText])
+
+  return (
+    <AboutSection>
+      <H1>So here&apos;s a little about me</H1>
+      <p>
+        <Shrink ref={shrinkText}>&ldquo;about me&rdquo;.</Shrink>
+      </p>
+
+      <H2>Thank You.</H2>
+
+      <H2>Now that that&apos;s out of the way, let me introduce myself</H2>
+
+      <p>
+        I&apos;m a New Jersey based web developer. My preferred languages are the usual affair:
+        JavaScript, CSS, HTML, English. I have experience with React and Redux as well as various
+        other React libraries.
     </p>
 
-    <H2>Thank You.</H2>
-
-    <H2>Now that that&apos;s out of the way, let me introduce myself</H2>
-
-    <p>
-      I&apos;m a New Jersey based web developer. My preferred languages are the usual affair:
-      JavaScript, CSS, HTML, English. I have experience with React and Redux as well as various
-      other React libraries.
+      <p>
+        I&apos;ve messed around with other frameworks and libraries like jQuery and KnockoutJS, and
+        even integrated them into other frameworks. I&apos;m no stranger to writing unit tests with
+        Mocha or configuring bundlers like webpack as well.
     </p>
 
-    <p>
-      I&apos;ve messed around with other frameworks and libraries like jQuery and KnockoutJS, and
-      even integrated them into other frameworks. I&apos;m no stranger to writing unit tests with
-      Mocha or configuring bundlers like webpack as well.
-    </p>
+      <H2>When I&apos;m not coding</H2>
 
-    <H2>When I&apos;m not coding</H2>
-
-    <p>
-      I spend my free time playing various video games and sometimes the occasional board game with
-      friends. Lately I&apos;ve been playing Civilization and various fighting games like Dragonball
-      FighterZ and Tekken 7.
+      <p>
+        I spend my free time playing various video games and sometimes the occasional board game with
+        friends. Lately I&apos;ve been playing Civilization and various fighting games like Dragonball
+        FighterZ and Tekken 7.
     </p>
-  </AboutSection>
-);
+    </AboutSection>
+  )
+};
 
 AboutPage.propTypes = {};
 

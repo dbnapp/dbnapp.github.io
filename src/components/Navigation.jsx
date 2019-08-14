@@ -30,7 +30,7 @@ const NavItem = styled.li`
 
 const NavMenu = styled.nav`
   font-family: serif;
-  position: absolute;
+  position: fixed;
   display: flex;
   bottom: 0;
   left: 50%;
