@@ -4,5 +4,5 @@ This is my site
 
 ## TODO:
 
-- Add images
-- Add fun scroll magic shenanigans
+- [ ] Add images
+- [x] ~~Add fun scroll magic shenanigans~~

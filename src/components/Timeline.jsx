@@ -1,6 +1,9 @@
-import React, { useReducer, useCallback, useMemo } from 'react';
+import React, {
+  useReducer, useCallback, useMemo, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ScrollMagic from 'scrollmagic';
 import TimelineEvent from './TimelineEvent';
 
 const TimelineFilter = styled.div`
@@ -131,7 +134,6 @@ const renderEvent = (event, selectedEventDate, dispatch) => {
       key={event.date}
       event={event}
       isSelected={isSelected}
-      onSelectEventClick={selectEvent}
     />
   );
 };
@@ -155,6 +157,38 @@ const Timeline = ({ events }) => {
     e => dispatch({ type: actionType.FILTER, filter: e.target.value }),
     [dispatch],
   );
+
+  useEffect(() => {
+    let filteredEvents = events;
+    if (filter !== 'all') {
+      filteredEvents = events.filter(event => event.type === filter);
+    }
+
+    const scrollController = new ScrollMagic.Controller({
+      container: '#scroll-container',
+    });
+
+    // duration and offset estimated based on TimelineEvent EventLine height
+    // TODO: centralize the calculation
+    filteredEvents.forEach((event, i) => {
+      new ScrollMagic.Scene({
+        duration: 200,
+        offset: 250 * i,
+      })
+        .on(
+          'enter',
+          () => dispatch({
+            type: actionType.SELECT_EVENT,
+            selectedEventDate: event.date,
+          }),
+        )
+        .addTo(scrollController);
+    });
+
+    return () => {
+      scrollController.destroy();
+    };
+  }, [filter]);
 
   return (
     <TimelineContainer>
