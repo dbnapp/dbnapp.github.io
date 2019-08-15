@@ -3,8 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const env = process.env.NODE_ENV;
+const sync = process.env.SYNC;
 
-const config = {
+const environment = {
   development: {
     devtool: 'cheap-module-eval-source-map',
   },
@@ -13,13 +14,13 @@ const config = {
   },
 };
 
-module.exports = {
+const config = {
   entry: path.resolve(__dirname, './src/index.jsx'),
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  devtool: config[env].devtool,
+  devtool: environment[env].devtool,
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     historyApiFallback: true,
@@ -37,6 +38,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+};
+
+if (sync) {
+  config.plugins.push(
     new BrowserSyncPlugin(
       {
         host: 'localhost',
@@ -47,8 +56,7 @@ module.exports = {
         reload: false,
       },
     ),
-  ],
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-};
+  );
+}
+
+module.exports = config;

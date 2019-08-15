@@ -35,6 +35,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.config.js",
+    "start:sync": "cross-env NODE_ENV=development SYNC=true webpack-dev-server --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js && cp src/404.html dist",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -b master"
