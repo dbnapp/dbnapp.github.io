@@ -61,7 +61,7 @@ const LinksPage = () => (
   <LinksSection>
     <h1>Here&apos;s my email if you want to talk</h1>
     <p>
-      <SuperLink href="mailto:dbnapp@gmail.com">dbnapp@gmail.com</SuperLink>
+      <SuperLink href="mailto:dbnappdev@gmail.com">dbnappdev@gmail.com</SuperLink>
     </p>
     <h2> or see what else I&apos;m up to</h2>
     <p>
