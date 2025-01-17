@@ -1,44 +1,15 @@
 {
   "name": "dbnapp.github.io",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "It's my site",
   "main": "index.js",
   "private": true,
-  "dependencies": {
-    "animejs": "^3.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-transition-group": "^4.2.1",
-    "scrollmagic": "^2.0.7",
-    "styled-components": "^4.3.2"
+  "scripts": {
+    "start": "parcel src/index.html"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "cross-env": "^5.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.2",
-    "gh-pages": "^2.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
-  },
-  "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.config.js",
-    "start:sync": "cross-env NODE_ENV=development SYNC=true webpack-dev-server --config webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js && cp src/404.html dist",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b master"
+    "parcel": "^2.13.3",
+    "tailwindcss": "^3.4.17"
   },
   "repository": {
     "type": "git",
