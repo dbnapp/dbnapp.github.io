@@ -7,6 +7,7 @@ import Navigation from './Navigation';
 import AboutPage from './AboutPage';
 import HistoryPage from './HistoryPage';
 import LinksPage from './LinksPage';
+import UnderConstruction from './UnderConstruction';
 
 const AppContainer = styled.div`
   position: absolute;
@@ -47,6 +48,7 @@ const OpacityGradient = styled.div`
 
 const App = ({ match: { params } }) => (
   <AppContainer>
+    <UnderConstruction />
     <Scrollable id="scroll-container">
       <MainContainer>
         <TransitionGroup appear component={null}>
