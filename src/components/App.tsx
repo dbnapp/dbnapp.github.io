@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { Greetings } from "./Greetings";
 import { Backdrop } from "./Backdrop";
 import { Sounds } from "./Sounds";
+import { Postcard } from "./Postcard";
 
 export const App = () => {
-  const [loadSounds, setLoadSounds] = useState(false);
-
   return (
-    <div className="grid w-[100vw] h-[100vh] grid-cols-11 grid-rows-11 gap-4 bg-[url('./assets/seaside.webp')] bg-cover bg-center">
-      <Backdrop />
-      <Greetings />
-      <button className="relative" onClick={() => setLoadSounds(true)} />
+    <div className="w-screen h-screen overflow-hidden bg-[url('./assets/seaside.webp')] bg-cover bg-center">
       <Sounds />
+      <Backdrop />
+      <div className="h-screen overflow-auto">
+        <div className="relative font-[Damion] flex flex-col gap-96 flex-nowrap items-center">
+          <Greetings />
+          <Postcard />
+        </div>
+      </div>
     </div>
   );
 };
