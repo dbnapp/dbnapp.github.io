@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Greetings } from "./Greetings";
 import { Backdrop } from "./Backdrop";
 import { Sounds } from "./Sounds";
 import { Postcard } from "./Postcard";
 
-export const App = () => {
-  return (
-    <div className="w-screen h-screen overflow-hidden bg-[url('./assets/seaside.webp')] bg-cover bg-center">
-      <Sounds />
-      <Backdrop />
-      <div className="h-screen overflow-auto">
-        <div className="relative flex flex-col gap-96 flex-nowrap items-center">
-          <Greetings />
-          <Postcard />
-        </div>
+export const App = () => (
+  <div className="w-screen h-screen overflow-hidden bg-[url('./assets/seaside.webp')] bg-cover bg-center">
+    <Sounds />
+    <Backdrop />
+    <div className="h-screen overflow-auto">
+      <div className="relative flex flex-col gap-96 flex-nowrap items-center">
+        <Greetings />
+        <Postcard />
+        <div /> {/* Empty div to create space for the postcard */}
       </div>
     </div>
-  );
-};
+  </div>
+);
