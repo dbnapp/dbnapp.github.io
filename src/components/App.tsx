@@ -9,7 +9,7 @@ export const App = () => (
     <Sounds />
     <Backdrop />
     <div className="h-screen overflow-auto">
-      <div className="relative flex flex-col gap-96 flex-nowrap items-center">
+      <div className="relative flex flex-col gap-[30rem] flex-nowrap items-center">
         <Greetings />
         <Postcard />
         <div /> {/* Empty div to create space for the postcard */}
