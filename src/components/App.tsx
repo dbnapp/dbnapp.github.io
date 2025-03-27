@@ -1,8 +1,9 @@
 import React from "react";
 import { Greetings } from "./Greetings";
 import { Backdrop } from "./Backdrop";
-import { Sounds } from "./Sounds";
 import { Postcard } from "./Postcard";
+import { Sounds } from "./Sounds";
+import { VibeCheck } from "./VibeCheck";
 
 export const App = () => (
   <div className="w-screen h-screen overflow-hidden bg-[url('./assets/seaside.webp')] bg-cover bg-center">
@@ -11,6 +12,7 @@ export const App = () => (
     <div className="h-screen overflow-auto">
       <div className="relative flex flex-col gap-[30rem] flex-nowrap items-center">
         <Greetings />
+        <VibeCheck />
         <Postcard />
         <div /> {/* Empty div to create space for the postcard */}
       </div>
