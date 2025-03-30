@@ -9,8 +9,13 @@ export const Sounds = () => {
 
   return (
     <div className="fixed z-50">
-      <YoutubePlayer id="nta1YhicoGw" onReady={setSoundAtom} />
-      <YoutubePlayer id="BlvOAd10kJo" onReady={setMusicAtom} />
+      <YoutubePlayer videoId="nta1YhicoGw" onReady={setSoundAtom} />
+      <YoutubePlayer
+        playlistId="PLBHg69O7HDuHPzzuJ5zmn2Dz-p15xgo3I"
+        loop
+        shuffle
+        onReady={setMusicAtom}
+      />
     </div>
   );
 };
