@@ -51,6 +51,7 @@ export const YoutubePlayer = (props: VideoProps | PlaylistProps) => {
         }${shuffle ? "&shuffle=1" : ""}`}
         title="YouTube video player"
         allow="autoplay"
+        className="hidden"
       ></iframe>
     );
   }

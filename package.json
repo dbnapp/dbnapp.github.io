@@ -15,7 +15,8 @@
     "url": "https://github.com/dbnapp/dbnapp.github.io/issues"
   },
   "scripts": {
-    "start": "vite serve src"
+    "start": "vite serve src",
+    "build": "vite build src"
   },
   "dependencies": {
     "@types/youtube": "^0.1.0",
