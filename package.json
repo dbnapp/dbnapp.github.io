@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "vite serve src",
-    "build": "vite build src"
+    "build:dev": "vite build src --outDir ../dist --sourcemap true"
   },
   "dependencies": {
     "@types/youtube": "^0.1.0",
