@@ -1,6 +1,7 @@
 import React from "react";
 import { Stamp } from "./Stamp";
 import { motion } from "motion/react";
+import { div } from "motion/react-client";
 
 export const Postcard = () => {
   return (

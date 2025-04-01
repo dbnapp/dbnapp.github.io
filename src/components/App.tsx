@@ -4,6 +4,7 @@ import { Backdrop } from "./Backdrop";
 import { Postcard } from "./Postcard";
 import { Sounds } from "./Sounds";
 import { VibeCheck } from "./VibeCheck";
+import { Projects } from "./Projects";
 
 export const App = () => (
   <div className="w-screen h-screen overflow-hidden bg-[url('./assets/seaside.webp')] bg-cover bg-center">
@@ -14,6 +15,7 @@ export const App = () => (
         <Greetings />
         <VibeCheck />
         <Postcard />
+        <Projects />
         <div /> {/* Empty div to create space for the postcard */}
       </div>
     </div>
