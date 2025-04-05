@@ -14,11 +14,11 @@ https://www.figma.com/design/eK6mooSmzMCeuxINuGFRoe/dbnapp.com?node-id=0-1
 
 I basically started with that gif in the background. I love the colors of the sunset and the ocean. It's from some anime but I never looked it up. I used AI to upscale it. I'm no artist! I didn't really have a plan around this site other than the aesthetic. My only requirements were:
 
-- show some basic info about myself
-- share links to my stuff
-- showcase projects (lol)
-- have city pop music
-- nice to have some animation
+- [ ] show some basic info about myself
+- [ ] share links to my stuff
+- [ ] showcase projects (lol)
+- [ ] have city pop music
+- [ ] nice to have some animation
 
 I left a lot of blanks to be filled in. Eventually I came upon the idea of a greeting / postcard. City pop and the beach are very closely tied to a "vacation" vibe. It feels like somewhere far away. Somewhere peaceful and familiar. This allowed me to put a spin on my usual "about me" blurb and write it as if I was writing to someone on a postcard. I thought this was pretty clever!
 
