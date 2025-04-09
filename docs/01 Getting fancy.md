@@ -22,3 +22,11 @@ Still looking into it but we'll see!
 # Parcel -> Vite
 
 Oh and as a reminder to myself. Parcel worked fine with zero config out of the box, but for some reason it was having problems importing `motion/react`. Like not doing anything fancy, just the import was an issue. Couldn't find a solution quickly enough so I switched to `vite`. Thankfully it's a small project so that was an easy swap and it imported `motion/react` with no issues 🤷.
+
+# Other cool ideas
+
+One thing I thought might be fun is to add a dark mode. If I could I'd like to filter the background gif to make it look like a moon at night. I'm thinking I could use svg filters or something, and maybe animate the transition.
+
+I'd also fade out and fade in different music of course.
+
+- [ ] dark mode
