@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 const absoluteButtonAnimateProperties = {
   absolutely: {
-    translateX: "6rem",
+    translateX: "30%",
   },
   not: { translateX: "-14rem", visibility: "hidden", opacity: 0 },
   "": { translateX: "0rem" },
@@ -18,7 +18,7 @@ const notButtonAnimateProperties = {
     visibility: "hidden",
     opacity: 0,
   },
-  not: { translateX: "-14rem" },
+  not: { translateX: "-125%" },
   "": { translateX: "0rem" },
 } as const;
 
@@ -42,10 +42,10 @@ export const VibeCheck = () => {
   return (
     <div className="font-[Damion] mt-96 flex flex-col items-center justify-center">
       <div className="text-3xl md:text-5xl">Vibes on?</div>
-      <div className="relative flex gap-6">
+      <div className="relative text-5xl md:text-8xl flex gap-6">
         <motion.button
           key="absolutely-button"
-          className="text-5xl md:text-8xl"
+          className=""
           animate={{
             ...absoluteButtonAnimateProperties[choiceSelected],
           }}
@@ -104,7 +104,7 @@ export const VibeCheck = () => {
         </motion.button>
         <motion.button
           key="not-button"
-          className=" text-5xl md:text-8xl"
+          className=""
           animate={{
             ...notButtonAnimateProperties[choiceSelected],
           }}
@@ -141,9 +141,9 @@ export const VibeCheck = () => {
         {/* pointer animates separately between moving between options and repeatedly up and down, thus two divs */}
         <motion.div
           key="pointer"
-          className="absolute top-24"
+          className="absolute top-12 md:top-24"
           animate={{
-            left: currentButtonFocus === "absolutely" ? "10rem" : "30rem",
+            left: currentButtonFocus === "absolutely" ? "25%" : "80%",
             visibility: choiceSelected ? "hidden" : "visible",
             opacity: choiceSelected ? 0 : 1,
           }}
@@ -155,7 +155,7 @@ export const VibeCheck = () => {
           }}
         >
           <motion.div
-            className="text-5xl pointer-events-none"
+            className=" pointer-events-none"
             animate={{
               translateY: ["0%", "100%"],
             }}
@@ -163,9 +163,6 @@ export const VibeCheck = () => {
               repeat: Infinity,
               repeatType: "mirror",
               duration: 0.75,
-            }}
-            style={{
-              left: currentButtonFocus === "absolutely" ? "10rem" : "30rem",
             }}
           >
             👆
