@@ -3,17 +3,28 @@ import React from "react";
 
 export const Greetings = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -100 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: { duration: 1, ease: "easeInOut" },
-      }}
-      className="font-[Damion] mt-96 flex flex-col items-center justify-center"
-    >
-      <div className="text-3xl md:text-5xl">Greetings from</div>
-      <div className="text-5xl md:text-8xl">dbnapp.com</div>
-    </motion.div>
+    <div className="font-[Damion] mt-96 flex flex-col items-center justify-center">
+      <motion.div
+        className="text-3xl md:text-5xl"
+        initial={{ opacity: 0, x: 50, rotate: 190 }}
+        animate={{
+          opacity: 1,
+          x: -200,
+          rotate: -20,
+          transition: {
+            delay: 1,
+          },
+        }}
+      >
+        Greetings from
+      </motion.div>
+      <motion.div
+        className="text-5xl md:text-8xl"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        dbnapp.com
+      </motion.div>
+    </div>
   );
 };
