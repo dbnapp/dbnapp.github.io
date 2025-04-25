@@ -40,7 +40,7 @@ export const VibeCheck = () => {
   };
 
   return (
-    <div className="font-[Damion] mt-96 flex flex-col items-center justify-center">
+    <div className="snap-center font-[Damion] my-56 flex flex-col items-center justify-center">
       <div className="text-3xl md:text-5xl">Vibes on?</div>
       <div className="relative text-5xl md:text-8xl flex gap-6">
         <motion.button

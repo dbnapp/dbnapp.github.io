@@ -12,7 +12,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div className="w-[95%] lg:w-[70rem]">
+    <div className="snap-center my-56 w-[95%] lg:w-[70rem]">
       <div className="flex flex-col gap-4">
         {projects.map((project, index) => (
           <div key={index}>

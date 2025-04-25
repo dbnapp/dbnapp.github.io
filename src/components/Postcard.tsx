@@ -5,7 +5,7 @@ import { div } from "motion/react-client";
 
 export const Postcard = () => {
   return (
-    <motion.div className="font-[IndieFlower] rounded w-[95%] lg:w-[66rem] h-[50rem] p-6 bg-[repeating-linear-gradient(135deg,#E77F7F_1rem,#E77F7F_3rem,white_3rem,white_5rem,#71A6E5_5rem,#71A6E5_7rem,white_7rem,white_9rem)]">
+    <motion.div className="snap-center my-56 font-[IndieFlower] rounded w-[95%] lg:w-[66rem] h-[50rem] p-6 bg-[repeating-linear-gradient(135deg,#E77F7F_1rem,#E77F7F_3rem,white_3rem,white_5rem,#71A6E5_5rem,#71A6E5_7rem,white_7rem,white_9rem)]">
       <div className="h-full overflow-auto bg-white rounded border-2 border-solid border-gray-600">
         <div className="relative h-full overflow-hidden flex flex-col sm:flex-row justify-between p-6 sm:p-0">
           <div className="sm:hidden absolute self-end w-24">
