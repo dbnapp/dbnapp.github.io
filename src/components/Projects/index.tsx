@@ -14,7 +14,7 @@ export const Projects = () => {
   return (
     <div className="snap-center my-56 w-[95%] lg:w-[70rem]">
       <div className="flex flex-col gap-4 items-center bg-orange-100 md:mx-24 px-12 py-16 rounded-sm shadow-lg">
-        <div className="font-[IndieFlower] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pb-8">
+        <div className="font-[IndieFlower] font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl pb-8">
           Some projects of mine...
         </div>
         {projects.map((project, index) => (

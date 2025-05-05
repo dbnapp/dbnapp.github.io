@@ -22,7 +22,7 @@ export const Sounds = () => {
   const setMusicAtom = useSetAtom(musicAtom);
 
   // using a render delay so the page loads faster before loading music
-  const render = useRenderDelay(1000);
+  const render = useRenderDelay(2000);
   return (
     render && (
       <div className="fixed">
