@@ -37,6 +37,10 @@ export const YoutubePlayer = (props: VideoProps | PlaylistProps) => {
             event.target.setShuffle(true);
           }
         },
+        onError: (event) => {
+          console.log(`YT Player error: ${event.data}`);
+          event.target.nextVideo();
+        },
       },
     });
   }, [YT]);
@@ -59,7 +63,7 @@ export const YoutubePlayer = (props: VideoProps | PlaylistProps) => {
   return (
     <iframe
       id={`yt-${id}`}
-      src={`https://www.youtube.com/embed/${id}?enablejsapi=1&autoplay=1&mute=1`}
+      src={`https://www.youtube.com/embed/${id}?enablejsapi=1&autoplay=11&mute=1`}
       allow="autoplay"
       className="hidden"
     ></iframe>

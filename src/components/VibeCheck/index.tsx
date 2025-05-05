@@ -1,8 +1,6 @@
-import { useAtomValue } from "jotai";
-import React, { useRef, useState } from "react";
-import { musicAtom, soundsAtom } from "../Sounds/atoms";
-import { animate, AnimationPlaybackControls } from "motion";
+import React, { useState } from "react";
 import { motion } from "motion/react";
+import { useVolumeControls } from "../Sounds/hooks";
 
 const absoluteButtonAnimateProperties = {
   absolutely: {
@@ -23,9 +21,6 @@ const notButtonAnimateProperties = {
 } as const;
 
 export const VibeCheck = () => {
-  const sounds = useAtomValue(soundsAtom);
-  const music = useAtomValue(musicAtom);
-  const volumeAnimateRef = useRef<AnimationPlaybackControls>(null);
   const [currentButtonFocus, setCurrentButtonFocus] = useState<
     "absolutely" | "not"
   >("absolutely");
@@ -33,11 +28,7 @@ export const VibeCheck = () => {
     "absolutely" | "not" | ""
   >("");
 
-  const stopVolumeAnimation = () => {
-    if (volumeAnimateRef.current) {
-      volumeAnimateRef.current.stop();
-    }
-  };
+  const { mute, unmute } = useVolumeControls();
 
   return (
     <div className="snap-center font-[Damion] my-56 flex flex-col items-center justify-center">
@@ -51,20 +42,7 @@ export const VibeCheck = () => {
           }}
           onClick={() => {
             setChoiceSelected("absolutely");
-            stopVolumeAnimation();
-
-            sounds?.setVolume(0);
-            sounds?.unMute();
-            music?.setVolume(0);
-            music?.unMute();
-
-            volumeAnimateRef.current = animate(0, 100, {
-              duration: 10,
-              onUpdate: (v) => {
-                sounds?.setVolume(v);
-                music?.setVolume(v);
-              },
-            });
+            unmute();
           }}
           onFocus={() => {
             setCurrentButtonFocus("absolutely");
@@ -110,16 +88,7 @@ export const VibeCheck = () => {
           }}
           onClick={() => {
             setChoiceSelected("not");
-            stopVolumeAnimation();
-            const initVol = sounds?.getVolume() || 100;
-
-            volumeAnimateRef.current = animate(initVol, 0, {
-              duration: 5,
-              onUpdate: (v) => {
-                sounds?.setVolume(v);
-                music?.setVolume(v);
-              },
-            });
+            mute();
           }}
           onFocus={() => {
             setCurrentButtonFocus("not");
