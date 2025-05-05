@@ -2,7 +2,7 @@ import React from "react";
 
 export const Envelope = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 430 334">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="30 0 370 334">
       <path fill="#fff" d="M28.7549 104.168h371.499V334H28.7549z" />
       <g filter="url(#a)">
         <path
