@@ -35,6 +35,7 @@ export const YoutubePlayer = (props: VideoProps | PlaylistProps) => {
           onReady(event.target);
           if (isPlaylistProps(props) && props.shuffle) {
             event.target.setShuffle(true);
+            event.target.nextVideo();
           }
         },
         onError: (event) => {
