@@ -1,24 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { useVolumeControls } from "../Sounds/hooks";
-
-const absoluteButtonAnimateProperties = {
-  absolutely: {
-    translateX: "30%",
-  },
-  not: { translateX: "-14rem", visibility: "hidden", opacity: 0 },
-  "": { translateX: "0rem" },
-} as const;
-
-const notButtonAnimateProperties = {
-  absolutely: {
-    translateX: "6rem",
-    visibility: "hidden",
-    opacity: 0,
-  },
-  not: { translateX: "-125%" },
-  "": { translateX: "0rem" },
-} as const;
+import { VibeButton } from "./VibeButton";
 
 export const VibeCheck = () => {
   const [currentButtonFocus, setCurrentButtonFocus] = useState<
@@ -32,14 +15,9 @@ export const VibeCheck = () => {
 
   return (
     <div className="snap-center font-[Damion] my-56 flex flex-col items-center justify-center">
-      <div className="text-3xl md:text-5xl">Vibes on?</div>
-      <div className="relative text-5xl md:text-8xl flex gap-6">
-        <motion.button
-          key="absolutely-button"
-          className=""
-          animate={{
-            ...absoluteButtonAnimateProperties[choiceSelected],
-          }}
+      <div className="text-3xl md:text-5xl pb-6">Vibes on?</div>
+      <div className="relative text-5xl md:text-8xl flex flex-wrap justify-center gap-6">
+        <VibeButton
           onClick={() => {
             setChoiceSelected("absolutely");
             unmute();
@@ -79,13 +57,9 @@ export const VibeCheck = () => {
               !
             </motion.span>
           </motion.span>
-        </motion.button>
-        <motion.button
+        </VibeButton>
+        <VibeButton
           key="not-button"
-          className=""
-          animate={{
-            ...notButtonAnimateProperties[choiceSelected],
-          }}
           onClick={() => {
             setChoiceSelected("not");
             mute();
@@ -105,7 +79,7 @@ export const VibeCheck = () => {
           >
             !
           </motion.span>
-        </motion.button>
+        </VibeButton>
 
         {/* pointer animates separately between moving between options and repeatedly up and down, thus two divs */}
         <motion.div
@@ -122,21 +96,7 @@ export const VibeCheck = () => {
             stiffness: 100,
             damping: 20,
           }}
-        >
-          <motion.div
-            className=" pointer-events-none"
-            animate={{
-              translateY: ["0%", "100%"],
-            }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "mirror",
-              duration: 0.75,
-            }}
-          >
-            👆
-          </motion.div>
-        </motion.div>
+        ></motion.div>
       </div>
     </div>
   );
