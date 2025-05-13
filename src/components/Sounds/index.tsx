@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { YoutubePlayer } from "../YoutubePlayer";
 import { useSetAtom } from "jotai";
 import { musicAtom, soundsAtom } from "./atoms";
+import { MiniPlayer } from "./MiniPlayer";
 
 const useRenderDelay = (time: number) => {
   const [render, setRender] = useState(false);

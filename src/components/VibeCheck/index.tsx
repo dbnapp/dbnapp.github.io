@@ -14,7 +14,7 @@ export const VibeCheck = () => {
   const { mute, unmute } = useVolumeControls();
 
   return (
-    <div className="snap-center font-[Damion] my-56 flex flex-col items-center justify-center">
+    <div className="snap-center font-[Damion] flex flex-col items-center justify-center">
       <div className="text-3xl md:text-5xl pb-6">Vibes on?</div>
       <div className="relative text-5xl md:text-8xl flex flex-wrap justify-center gap-6">
         <VibeButton

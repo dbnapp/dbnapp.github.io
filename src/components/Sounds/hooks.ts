@@ -1,12 +1,13 @@
-import { useAtomValue } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { animate, AnimationPlaybackControls } from "motion";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { musicAtom, soundsAtom } from "./atoms";
+import { musicAtom, playerStateAtom, soundsAtom } from "./atoms";
 
 export const useVolumeControls = () => {
   const [action, setAction] = useState<"mute" | "unmute" | "">("");
   const sounds = useAtomValue(soundsAtom);
   const music = useAtomValue(musicAtom);
+  const [playerState, setPlayerState] = useAtom(playerStateAtom);
   const volumeAnimateRef = useRef<AnimationPlaybackControls>(null);
 
   const stopVolumeAnimation = () => {
@@ -45,14 +46,17 @@ export const useVolumeControls = () => {
     });
   }, [sounds, music]);
 
+  // queues an action in case the players aren't ready yet
   useEffect(() => {
     if (sounds && music) {
       switch (action) {
         case "mute":
           animateMute();
+          setPlayerState("muted");
           break;
         case "unmute":
           animateUnmute();
+          setPlayerState("unmuted");
           break;
       }
 
@@ -63,5 +67,5 @@ export const useVolumeControls = () => {
   const mute = () => setAction("mute");
   const unmute = () => setAction("unmute");
 
-  return { mute, unmute };
+  return { mute, unmute, playerState };
 };

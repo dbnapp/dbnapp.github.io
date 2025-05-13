@@ -3,7 +3,7 @@ import React from "react";
 
 export const Greetings = () => {
   return (
-    <div className="snap-center font-[Damion] mt-72 md:mt-80 mb-56 flex flex-col items-center justify-center">
+    <div className="snap-center font-[Damion]  flex flex-col items-center justify-center">
       <motion.div
         className="text-5xl md:text-8xl"
         initial={{ opacity: 0, y: -50 }}
