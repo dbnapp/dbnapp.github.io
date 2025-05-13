@@ -11,7 +11,7 @@ export const VibeCheck = () => {
     "absolutely" | "not" | ""
   >("");
 
-  const { mute, unmute } = useVolumeControls();
+  const { mute, unmute, playerState } = useVolumeControls();
 
   return (
     <div className="snap-center font-[Damion] flex flex-col items-center justify-center">
@@ -30,22 +30,28 @@ export const VibeCheck = () => {
           }}
         >
           <motion.span
-            animate={{
-              color:
-                choiceSelected === "absolutely"
-                  ? [
-                      "#ff00ff",
-                      "#00ffff",
-                      "#00ff00",
-                      "#ffff00",
-                      "#ff0000",
-                      "#ff00ff",
-                    ]
-                  : [],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
+            animate={playerState}
+            variants={{
+              muted: {
+                color: [null, "#000000"],
+                transition: {
+                  duration: 3,
+                },
+              },
+              unmuted: {
+                color: [
+                  "#ff00ff",
+                  "#00ffff",
+                  "#00ff00",
+                  "#ffff00",
+                  "#ff0000",
+                  "#ff00ff",
+                ],
+                transition: {
+                  repeat: Infinity,
+                  duration: 2,
+                },
+              },
             }}
           >
             Absolutely
