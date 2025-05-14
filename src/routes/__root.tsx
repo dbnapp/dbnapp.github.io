@@ -5,10 +5,11 @@ import { Backdrop } from "../components/Backdrop";
 
 export const Route = createRootRoute({
   component: () => (
-    <div className="bg-[url('./assets/seaside.webp')] bg-cover bg-center">
+    <div>
+      <div className="fixed w-screen h-screen bg-[url('./assets/seaside.webp')] bg-cover bg-center"></div>
       <Sounds />
       <Backdrop />
-      <div className="snap-y h-screen overflow-auto relative flex flex-col flex-nowrap items-center gap-[65vh] before:content-[''] after:content-['']">
+      <div className="snap-y snap-mandatory relative flex flex-col flex-nowrap items-center gap-[45vh] before:content-[''] ">
         <Outlet />
       </div>
     </div>
