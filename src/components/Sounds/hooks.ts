@@ -64,8 +64,14 @@ export const useVolumeControls = () => {
     }
   }, [sounds, music, action]);
 
-  const mute = () => setAction("mute");
-  const unmute = () => setAction("unmute");
+  const mute = () => {
+    if (playerState === "muted") return;
+    setAction("mute");
+  };
+  const unmute = () => {
+    if (playerState === "unmuted") return;
+    setAction("unmute");
+  };
 
   return { mute, unmute, playerState };
 };
