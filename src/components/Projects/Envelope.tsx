@@ -6,18 +6,21 @@ export const Envelope = ({ children }) => {
   const { scrollYProgress } = useScroll();
   const paperTranslateY = useTransform(
     scrollYProgress,
-    [0.7, 1],
+    [0.8, 1],
     ["0%", "-30%"]
   );
   const envelopeTranslateY = useTransform(
     scrollYProgress,
-    [0.7, 1],
-    ["0%", "90%"]
+    [0.55, 0.7],
+    ["100%", "0%"]
   );
 
   return (
     <div>
-      <motion.div className="fixed -bottom-[36rem] w-[95%] lg:w-[70rem] z-0">
+      <motion.div
+        className="fixed -bottom-[26rem] w-[95%] lg:w-[70rem]"
+        style={{ translateY: envelopeTranslateY }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -155,7 +158,10 @@ export const Envelope = ({ children }) => {
       >
         {children}
       </motion.div>
-      <motion.div className="fixed -bottom-[36rem] w-[95%] lg:w-[70rem] z-20">
+      <motion.div
+        className="fixed -bottom-[26rem] w-[95%] lg:w-[70rem]"
+        style={{ translateY: envelopeTranslateY }}
+      >
         <EnvelopeFront />
       </motion.div>
     </div>

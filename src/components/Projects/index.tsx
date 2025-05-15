@@ -34,28 +34,6 @@ export const Projects = () => {
                 </p>
               </div>
             ))}
-            {projects.map((project, index) => (
-              <div key={index} className="grid grid-cols-4 gap-4 items-center">
-                <div className="col-span-4 justify-self-center font-[Damion] text-3xl">
-                  {project.title}
-                </div>
-                <div className="col-span-4 md:col-span-1 justify-self-center w-full max-w-36 aspect-square bg-gray-400 rounded"></div>
-                <p className="col-span-4 md:col-span-3 font-[IndieFlower] text-center md:text-left">
-                  {project.description}
-                </p>
-              </div>
-            ))}
-            {projects.map((project, index) => (
-              <div key={index} className="grid grid-cols-4 gap-4 items-center">
-                <div className="col-span-4 justify-self-center font-[Damion] text-3xl">
-                  {project.title}
-                </div>
-                <div className="col-span-4 md:col-span-1 justify-self-center w-full max-w-36 aspect-square bg-gray-400 rounded"></div>
-                <p className="col-span-4 md:col-span-3 font-[IndieFlower] text-center md:text-left">
-                  {project.description}
-                </p>
-              </div>
-            ))}
             <div className="font-[IndieFlower] text-xl md:text-2xl lg:text-4xl pt-16">
               ... and more to come!
             </div>
