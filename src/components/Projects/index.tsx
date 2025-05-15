@@ -14,7 +14,7 @@ const projects = [
 export const Projects = () => {
   return (
     <div className="w-[95%] lg:w-[70rem]">
-      <motion.div className="relative">
+      <motion.div className="-bottom-[24rem] w-[95%] lg:w-[70rem]">
         <Envelope>
           <div
             className="flex flex-col gap-4 items-center sm:mx-8 md:mx-24 px-12 py-16 rounded-sm shadow-lg

@@ -17,7 +17,7 @@ export const Envelope = ({ children }) => {
 
   return (
     <div>
-      <motion.div className="relative bottom-0 z-0">
+      <motion.div className="fixed -bottom-[36rem] w-[95%] lg:w-[70rem] z-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -150,12 +150,12 @@ export const Envelope = ({ children }) => {
         </svg>
       </motion.div>
       <motion.div
-        className="absolute bottom-0"
+        className="sticky -bottom-[36rem] w-[95%]"
         style={{ translateY: paperTranslateY }}
       >
         {children}
       </motion.div>
-      <motion.div className="absolute bottom-0 w-full z-20">
+      <motion.div className="fixed -bottom-[36rem] w-[95%] lg:w-[70rem] z-20">
         <EnvelopeFront />
       </motion.div>
     </div>
