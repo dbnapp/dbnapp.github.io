@@ -13,33 +13,46 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <div className="w-[95%] lg:w-[70rem]">
-      <motion.div className="-bottom-[24rem] w-[95%] lg:w-[70rem]">
-        <Envelope>
-          <div
-            className="flex flex-col gap-4 items-center sm:mx-8 md:mx-24 px-12 py-16 rounded-sm shadow-lg
-      bg-[url('./assets/paper-texture.webp')] mt-[45rem]"
-          >
-            <div className="font-[IndieFlower] font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl pb-8">
-              Some projects of mine...
+    <Envelope>
+      <div
+        className="
+          flex flex-col gap-4 items-center  py-16 rounded-sm shadow-lg bg-[url('./assets/paper-texture.webp')] 
+          mt-24 px-4
+          sm:px-12
+          md:mt-[36rem]
+          lg:mt-[28rem]"
+      >
+        <div
+          className="
+          font-[IndieFlower] font-bold pb-8
+          text-2xl 
+          sm:text-3xl 
+          md:text-4xl 
+          lg:text-5xl"
+        >
+          Some projects of mine...
+        </div>
+        {projects.map((project, index) => (
+          <div key={index} className="grid grid-cols-4 gap-4 items-center">
+            <div className="col-span-4 justify-self-center font-[Damion] text-3xl">
+              {project.title}
             </div>
-            {projects.map((project, index) => (
-              <div key={index} className="grid grid-cols-4 gap-4 items-center">
-                <div className="col-span-4 justify-self-center font-[Damion] text-3xl">
-                  {project.title}
-                </div>
-                <div className="col-span-4 md:col-span-1 justify-self-center w-full max-w-36 aspect-square bg-gray-400 rounded"></div>
-                <p className="col-span-4 md:col-span-3 font-[IndieFlower] text-center md:text-left">
-                  {project.description}
-                </p>
-              </div>
-            ))}
-            <div className="font-[IndieFlower] text-xl md:text-2xl lg:text-4xl pt-16">
-              ... and more to come!
-            </div>
+            <div className="col-span-4 md:col-span-1 justify-self-center w-full max-w-36 aspect-square bg-gray-400 rounded"></div>
+            <p className="col-span-4 md:col-span-3 font-[IndieFlower] text-center md:text-left">
+              {project.description}
+            </p>
           </div>
-        </Envelope>
-      </motion.div>
-    </div>
+        ))}
+        <div
+          className="
+            font-[IndieFlower] pt-16
+            text-xl 
+            md:text-2xl 
+            lg:text-4xl"
+        >
+          ... and more to come!
+        </div>
+      </div>
+    </Envelope>
   );
 };
