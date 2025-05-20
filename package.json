@@ -18,7 +18,7 @@
     "start": "vite",
     "build": "vite build",
     "build:dev": "vite build --sourcemap true",
-    "deploy": "build && gh-pages -d dist -b master"
+    "deploy": "npm run build && gh-pages -d dist -b master"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.115.2",
