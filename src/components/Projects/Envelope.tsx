@@ -42,7 +42,7 @@ export const Envelope = ({ children }) => {
       </motion.div>
       <motion.div
         className="
-          fixed left-0 right-0 my-0 mx-auto 
+          fixed left-0 right-0 my-0 mx-auto  pointer-events-none
           -bottom-20 w-[95%]
           sm:-bottom-36
           md:-bottom-48
