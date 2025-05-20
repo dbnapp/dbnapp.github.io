@@ -1,12 +1,15 @@
 import React from "react";
 import { Envelope } from "./Envelope";
+import dbnappComUrl from "/src/assets/dbnapp-com.webm";
+import dbnappComThumbnailUrl from "/src/assets/dbnapp-com-thumbnail.webp";
 
+// todo: dynamic later
 const projects = [
   {
     title: "dbnapp.com",
     url: "https://dbnapp.com",
-    srcUrl: "../../assets/dbnapp-com.webm",
-    thumbnailUrl: "../../assets/dbnapp-com-thumbnail.webm",
+    srcUrl: dbnappComUrl,
+    thumbnailUrl: dbnappComThumbnailUrl,
     githubUrl: "",
     description:
       "My site! Maybe you've seen it? Built using Typescript, React, Tailwind CSS, Motion and Vite. This is actually the third iteration of it. Heavily inspired by things like city pop, vapor wave, sunsets, nostalgia. ",
@@ -48,15 +51,9 @@ export const Projects = () => {
                 autoPlay
                 loop
                 muted
-                poster={new URL(
-                  project.thumbnailUrl,
-                  import.meta.url
-                ).toString()}
+                poster={project.thumbnailUrl}
               >
-                <source
-                  src={new URL(project.srcUrl, import.meta.url).toString()}
-                  type="video/webm"
-                />
+                <source src={project.srcUrl} type="video/webm" />
               </video>
             </div>
             <p className="col-span-4 md:col-span-3 font-[IndieFlower] text-center md:text-left">
