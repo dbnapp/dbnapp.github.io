@@ -16,7 +16,9 @@
   },
   "scripts": {
     "start": "vite",
-    "build:dev": "vite build --sourcemap true"
+    "build": "vite build",
+    "build:dev": "vite build --sourcemap true",
+    "deploy": "build && gh-pages -d dist -b master"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.115.2",
@@ -32,6 +34,7 @@
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
