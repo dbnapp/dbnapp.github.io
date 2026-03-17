@@ -1,19 +1,19 @@
-import React from "react";
+import type { FC, ReactNode } from "react";
 import { EnvelopeFront } from "./EnvelopeFront";
 import { motion, useScroll, useTransform } from "motion/react";
 import { EnvelopeBack } from "./EnvelopeBack";
 
-export const Envelope = ({ children }) => {
+export const Envelope: FC<{ children: ReactNode }> = ({ children }) => {
   const { scrollYProgress } = useScroll();
   const paperTranslateY = useTransform(
     scrollYProgress,
     [0.9, 1],
-    ["0%", "-30%"]
+    ["0%", "-30%"],
   );
   const envelopeTranslateY = useTransform(
     scrollYProgress,
     [0.6, 0.75],
-    ["100%", "0%"]
+    ["100%", "0%"],
   );
 
   return (

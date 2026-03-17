@@ -1,4 +1,3 @@
-import React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Greetings } from "../components/Greetings";
 import { VibeCheck } from "../components/VibeCheck";

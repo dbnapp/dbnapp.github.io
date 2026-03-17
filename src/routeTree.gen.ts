@@ -11,30 +11,9 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as VibeCheckImport } from './routes/vibe-check'
-import { Route as ProjectsImport } from './routes/projects'
-import { Route as PostcardImport } from './routes/postcard'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
-
-const VibeCheckRoute = VibeCheckImport.update({
-  id: '/vibe-check',
-  path: '/vibe-check',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ProjectsRoute = ProjectsImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const PostcardRoute = PostcardImport.update({
-  id: '/postcard',
-  path: '/postcard',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -53,27 +32,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/postcard': {
-      id: '/postcard'
-      path: '/postcard'
-      fullPath: '/postcard'
-      preLoaderRoute: typeof PostcardImport
-      parentRoute: typeof rootRoute
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsImport
-      parentRoute: typeof rootRoute
-    }
-    '/vibe-check': {
-      id: '/vibe-check'
-      path: '/vibe-check'
-      fullPath: '/vibe-check'
-      preLoaderRoute: typeof VibeCheckImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -81,47 +39,32 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/postcard': typeof PostcardRoute
-  '/projects': typeof ProjectsRoute
-  '/vibe-check': typeof VibeCheckRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/postcard': typeof PostcardRoute
-  '/projects': typeof ProjectsRoute
-  '/vibe-check': typeof VibeCheckRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/postcard': typeof PostcardRoute
-  '/projects': typeof ProjectsRoute
-  '/vibe-check': typeof VibeCheckRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/postcard' | '/projects' | '/vibe-check'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/postcard' | '/projects' | '/vibe-check'
-  id: '__root__' | '/' | '/postcard' | '/projects' | '/vibe-check'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PostcardRoute: typeof PostcardRoute
-  ProjectsRoute: typeof ProjectsRoute
-  VibeCheckRoute: typeof VibeCheckRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PostcardRoute: PostcardRoute,
-  ProjectsRoute: ProjectsRoute,
-  VibeCheckRoute: VibeCheckRoute,
 }
 
 export const routeTree = rootRoute
@@ -134,23 +77,11 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/",
-        "/postcard",
-        "/projects",
-        "/vibe-check"
+        "/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
-    },
-    "/postcard": {
-      "filePath": "postcard.tsx"
-    },
-    "/projects": {
-      "filePath": "projects.tsx"
-    },
-    "/vibe-check": {
-      "filePath": "vibe-check.tsx"
     }
   }
 }
