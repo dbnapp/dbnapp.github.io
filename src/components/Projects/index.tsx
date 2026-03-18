@@ -21,7 +21,7 @@ export const Projects = () => {
     <Envelope>
       <div
         className="
-          flex flex-col gap-4 items-center  py-16 rounded-sm shadow-lg bg-[url('./assets/paper-texture.webp')] 
+          flex flex-col gap-4 items-center  py-16 rounded-sm shadow-lg bg-[url('/src/assets/paper-texture.webp')] 
           mt-24 px-4
           sm:px-12
           md:mt-[36rem]

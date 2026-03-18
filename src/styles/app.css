@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@font-face {
+    font-family: 'Damion';
+    src: url(/src/fonts/Damion-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'IndieFlower';
+    src: url(/src/fonts/IndieFlower-Regular.ttf);
+}

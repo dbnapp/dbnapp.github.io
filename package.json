@@ -14,30 +14,32 @@
   "bugs": {
     "url": "https://github.com/dbnapp/dbnapp.github.io/issues"
   },
+  "type": "module",
   "scripts": {
-    "start": "vite",
+    "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --sourcemap true",
     "deploy": "npm run build && gh-pages -d dist -b master"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.115.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/react-router": "^1.167.4",
+    "@tanstack/react-start": "^1.167.4",
     "@types/youtube": "^0.1.0",
     "jotai": "^2.12.2",
-    "motion": "^12.5.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "motion": "^12.38.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "@tanstack/react-router-devtools": "^1.115.2",
-    "@tanstack/router-plugin": "^1.115.2",
-    "@types/react": "^19.0.7",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
     "gh-pages": "^6.3.0",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3",
-    "vite": "^6.2.3"
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^6.1.1"
   }
 }
