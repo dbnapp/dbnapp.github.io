@@ -10,7 +10,22 @@ export default defineConfig({
   },
   plugins: [
     tsConfigPaths(),
-    tanstackStart(),
+    tanstackStart({
+      // ssg
+      prerender: {
+        enabled: true,
+        autoStaticPathsDiscovery: true,
+        concurrency: 14,
+        crawlLinks: true,
+        retryCount: 2,
+        retryDelay: 1000,
+        maxRedirects: 5,
+        failOnError: true,
+        onSuccess: ({ page }) => {
+          console.log(`Rendered ${page.path}`);
+        },
+      },
+    }),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
     tailwindcss(),
