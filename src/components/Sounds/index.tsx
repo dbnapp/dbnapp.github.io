@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { YoutubePlayer } from "../YoutubePlayer";
 import { useSetAtom } from "jotai";
 import { musicAtom, soundsAtom } from "./atoms";

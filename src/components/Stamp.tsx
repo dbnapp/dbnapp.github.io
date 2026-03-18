@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Stamp = ({ className }: { className?: string }) => {
   return (
     <div

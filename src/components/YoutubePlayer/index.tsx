@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useYoutubeApi } from "./hooks";
 
 interface VideoProps {
@@ -14,7 +14,7 @@ interface PlaylistProps {
 }
 
 const isPlaylistProps = (
-  props: VideoProps | PlaylistProps
+  props: VideoProps | PlaylistProps,
 ): props is PlaylistProps => {
   return (props as PlaylistProps).playlistId !== undefined;
 };

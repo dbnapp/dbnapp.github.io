@@ -1,5 +1,3 @@
-import React from "react";
-
 export const EnvelopeBack = () => {
   return (
     <svg viewBox="0 0 501 530" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,9 +20,9 @@ export const EnvelopeBack = () => {
           width="499.985"
           height="223.249"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

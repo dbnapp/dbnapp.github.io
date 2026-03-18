@@ -1,9 +1,7 @@
-import React from "react";
-
 export const EnvelopeFront = () => {
   return (
     <svg viewBox="0 0 500 539" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_115_235)">
+      <g clipPath="url(#clip0_115_235)">
         <g filter="url(#filter0_d_115_235)">
           <path
             d="M7 536V235L234.107 390.116C243.627 396.618 256.159 396.62 265.681 390.122L493 235V536H7Z"
@@ -35,9 +33,9 @@ export const EnvelopeFront = () => {
           width="518"
           height="333"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -70,9 +68,9 @@ export const EnvelopeFront = () => {
           width="125.417"
           height="61.7993"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -105,9 +103,9 @@ export const EnvelopeFront = () => {
           width="516"
           height="211.307"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

@@ -1,4 +1,3 @@
-import React from "react";
 import { Stamp } from "./Stamp";
 import { motion } from "motion/react";
 

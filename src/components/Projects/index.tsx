@@ -1,4 +1,3 @@
-import React from "react";
 import { Envelope } from "./Envelope";
 import dbnappComUrl from "/src/assets/dbnapp-com.webm";
 import dbnappComThumbnailUrl from "/src/assets/dbnapp-com-thumbnail.webp";
